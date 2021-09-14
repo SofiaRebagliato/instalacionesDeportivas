@@ -9,6 +9,6 @@ package com.example.instalacionesDeportivas.entities;
  *
  * @author Sofia
  */
-public class Class {
+public class horariosInstalaciones {
     
 }
