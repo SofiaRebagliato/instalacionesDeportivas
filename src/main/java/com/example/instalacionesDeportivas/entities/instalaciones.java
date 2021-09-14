@@ -29,6 +29,6 @@ public class instalaciones {
     private Float Precio;
     
     @OneToMany(mappedBy = "instalaciones") 
-    private List<instalaciones> instalaciones;
+    private List<reservas> reservas;
     
 }

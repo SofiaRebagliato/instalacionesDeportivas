@@ -9,6 +9,6 @@ package com.example.instalacionesDeportivas.controllers;
  *
  * @author Sofia
  */
-public class InstalacionesDeportivasController {
+public class UsuariosController {
     
 }

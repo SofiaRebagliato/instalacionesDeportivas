@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.instalacionesDeportivas.repositories;
+package com.example.instalacionesDeportivas.interfaces;
 
 /**
  *
  * @author Sofia
  */
-public interface InstalacionesDeportivasRepository {
+public interface IUsuarios {
     
 }

@@ -34,6 +34,6 @@ public class usuarios {
     private String Estado;
     
     @OneToMany(mappedBy = "usuarios") 
-    private List<usuarios> usuarios;
+    private List<reservas> reservas;
     
 }
