@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class InstalacionesDeportivasController {
     
 	@GetMapping("/index")
-	@ResponseBody
+	
 	public String getPrueba() {
-		return "index.html";
+		return "inicio/index.html";
 	}
 }

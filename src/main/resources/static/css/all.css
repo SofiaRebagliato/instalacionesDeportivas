@@ -93,7 +93,8 @@ p {
   text-align: right;
   font-size: 0;
   letter-spacing: -4px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  }
   #nav .nav-drop {
     overflow: hidden; }
   #nav ul {
@@ -110,10 +111,12 @@ p {
     margin: 0 0 0 34px; }
     #nav li a {
       display: block;
-      color: #fff; }
+      color: #153963;
+      text-shadow:2px 2px 4px white;
+       }
       #nav li a:hover {
         text-decoration: none;
-        color: #f9e084; }
+        color: #8080ff; }
 
 .nav-opener {
   display: none;
@@ -172,11 +175,13 @@ p {
   position: relative;
   overflow: hidden;
   text-align: center;
-  color: #ffce1b;
+  color: #FFFFFF;
+  text-shadow:2px 2px 4px black;
   font-size: 0;
   letter-spacing: -4px;
   padding: 104px 0 0;
-  background: transparent; }
+  background: transparent;
+   }
   .visual .bg-stretch {
     position: absolute;
     bottom: 0;
@@ -207,7 +212,8 @@ p {
     display: block;
     font-size: 1.6rem;
     line-height: 1.5;
-    color: #f9e084;
+    color: #FFFFFF;
+    text-shadow:2px 2px 4px black;
     text-transform: uppercase; }
   .visual .text-block {
     padding: 220px 0; }
@@ -585,13 +591,13 @@ p {
   line-height: 26px;
   padding: 8px 40px;
   text-transform: uppercase;
-  color: #333333;
+  color: #FFFFFF;
   font-weight: bold; }
   .plan .btn.btn-default {
-    background: rgba(247, 226, 150,1); }
+    background: #8080c0; }
     .plan .btn.btn-default:hover {
-      background: rgba(247, 226, 150,0.8); }
-.plan.recommended ul:before{ background:#ffce1b !important;}
+      background: #153963 ; }
+.plan.recommended ul:before{ background:#8080c0 !important;}
 
 .recommended .btn {
   padding: 14px 50px;
@@ -627,6 +633,7 @@ p {
   position: relative;
   z-index: 99; color:#fff;
   background: #000000;
+  color:#FFFFFF !important;
   }
   .plan.recommended ul {
     min-height: 176px;
@@ -1186,6 +1193,7 @@ p {
 
   .footer-holder {
     padding: 20px 0; }
+
 
   .cycle-gallery {
     font-size: 1.4rem;
