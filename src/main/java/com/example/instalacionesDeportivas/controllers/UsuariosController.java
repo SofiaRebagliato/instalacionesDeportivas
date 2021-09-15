@@ -53,8 +53,8 @@ public class UsuariosController {
     }
     
     @GetMapping("/borrarUsuarios")
-    public String borrarInstalacion(Model m, int id) {
-        repoUsuarios.deleteById(id);
+    public String borrarUsuarios(Model m, int IdUsuario) {
+        repoUsuarios.deleteById(IdUsuario);
         return "redirect:verUsuarios";
     }
 }
