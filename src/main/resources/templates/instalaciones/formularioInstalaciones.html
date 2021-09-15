@@ -1,90 +1,86 @@
-<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hiberus Sports</title>
-	<meta name="author" content="Manuel López López,Sofia Rebagliato Torregrosa">
-	<link rel="icon" type="image/jpg" href="favicons/logoHiberus.jpg" sizes="16x16">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/all.css">
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<div class="container">
-			
-		
-				
-					<h2>Creacion de Instalaciones</h2>
-				<form action="/instalaciones/guardarInstalacion" method="post"  enctype="multipart/form-data">
-				<div class="row">
-							<div class="col-2">
-								<label for="IdInstalaciones"></label>
-							</div>
-							<div class="col-10">
-								<div class="input-group mb-2">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hiberus Sports</title>
+        <meta name="author" content="Manuel López López,Sofia Rebagliato Torregrosa">
+        <link rel="icon" type="image/jpg" href="favicons/logoHiberus.jpg" sizes="16x16">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/all.css">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Creacion de Instalaciones</h2>
+            <form action="/instalaciones/guardarInstalacion" method="post"  enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-2">
+                        <label for="IdInstalaciones"></label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group mb-2">
 
-									<input type="hidden"required class="form-control"
-										name="IdInstalacion" />
-								</div>
-							</div>
-						</div>
+                            <input type="hidden"required class="form-control"
+                                   name="IdInstalacion" />
+                        </div>
+                    </div>
+                </div>
 
-						<div class="row">
-							<div class="col-2">
-								<label for="codigo">Nombre</label>
-							</div>
-							<div class="col-10">
-								<div class="input-group mb-2">
+                <div class="row">
+                    <div class="col-2">
+                        <label for="codigo">Nombre</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group mb-2">
 
-									<input type="text" required class="form-control" name="nombre" />
-								</div>
-							</div>
-						</div>
+                            <input type="text" required class="form-control" name="nombre" />
+                        </div>
+                    </div>
+                </div>
 
-						<div class="row">
-							<div class="col-2">
-								<label for="codigo">Descripción</label>
-							</div>
-							<div class="col-10">
-								<div class="input-group mb-2">
+                <div class="row">
+                    <div class="col-2">
+                        <label for="codigo">Descripción</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group mb-2">
 
-									<input type="text" required class="form-control"
-										name="Descripcion" />
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-2">
-								<label for="codigo">Imagen</label>
-							</div>
-							<div class="col-10">
-								<div class="input-group mb-2">
+                            <input type="text" required class="form-control"
+                                   name="Descripcion" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="codigo">Imagen</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group mb-2">
                             <input type="file" name="Imagen" class="form-control" >
                             <input type="submit" class="btn btn-primary" value="Enviar" >
                         </div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<div class="col-2">
-								<label for="codigo">Precio</label>
-							</div>
-							<div class="col-10">
-								<div class="input-group mb-2">
+                    </div>
+                </div>
 
-									<input type="number" required class="form-control" name="Precio" />
-								</div>
-							</div>
-						</div>
-						
-						
-				</form>
-			
-			
+                <div class="row">
+                    <div class="col-2">
+                        <label for="codigo">Precio</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group mb-2">
 
-</div>
+                            <input type="number" required class="form-control" name="Precio" />
+                        </div>
+                    </div>
+                </div>
 
-</body>
+
+            </form>
+
+
+
+        </div>
+
+    </body>
 </html>

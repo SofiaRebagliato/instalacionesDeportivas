@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro nuevo usuario o administrador</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                    <h3>Bienvenido a HiberusSports</h3>
+                    <p> Todo logro empieza con la decisión de intentarlo </p>
+                    <input type="submit" name="" value="Login"/><br/>
+                </div>
+                <div class="col-md-9 register-right">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" title="Admin"><i class="fas fa-users-cog"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" title="Nuevo usuario"><i class="fas fa-user"></i></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Nuevo Administrador</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nombre *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Primer apellido *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Segundo apellido *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="DNI *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="male" checked>
+                                                <span> Male </span> 
+                                            </label>
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="female">
+                                                <span>Female </span> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="file" class="form-control"  placeholder="Imagen *" value="" />
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Register"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h3  class="register-heading">Nuevo Usuario</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nombre *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Primer apellido *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Segundo apellido *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="DNI *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="male" checked>
+                                                <span> Male </span> 
+                                            </label>
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="gender" value="female">
+                                                <span>Female </span> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="file" class="form-control"  placeholder="Imagen *" value="" />
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Register"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

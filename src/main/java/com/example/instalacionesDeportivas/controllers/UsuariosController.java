@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/controlador/usuarios")
+@RequestMapping("/usuarios")
 public class UsuariosController {
     
     @Autowired
@@ -31,7 +31,7 @@ public class UsuariosController {
     @GetMapping("/altaUsuarios")
     public String altaUsuarios(Model m) {
         m.addAttribute("Usuarios", new usuarios());
-        return "usuarios";
+        return "formularioUsuarios";
     }
     
     @GetMapping("/editarUsuarios")
