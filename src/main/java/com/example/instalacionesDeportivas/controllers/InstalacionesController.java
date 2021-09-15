@@ -25,7 +25,7 @@ public class InstalacionesController {
     @GetMapping("/index")
     @ResponseBody
     public String getPrueba() {
-            return "index.html";
+        return "index.html";
     }
     
     @GetMapping("/verInstalacion")
@@ -41,9 +41,9 @@ public class InstalacionesController {
     }
     
     @GetMapping("/editarInstalacion")
-    public String editarInstalacion(Model m, int id) {
+    public String editarInstalacion(Model m, int IdInstalaciones) {
 
-        Optional<instalaciones> Instalaciones = repoInstalaciones.findById(id);
+        Optional<instalaciones> Instalaciones = repoInstalaciones.findById(IdInstalaciones);
         if (Instalaciones.isPresent()) {
             m.addAttribute("Instalaciones", Instalaciones.get());
         } else {
@@ -59,8 +59,8 @@ public class InstalacionesController {
     }
     
     @GetMapping("/borrarInstalacion")
-    public String borrarInstalacion(Model m, int id) {
-        repoInstalaciones.deleteById(id);
+    public String borrarInstalacion(Model m, int IdInstalaciones) {
+        repoInstalaciones.deleteById(IdInstalaciones);
         return "redirect:verInstalacion";
     }
 }
