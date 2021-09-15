@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/controlador/instalaciones")
+@RequestMapping("/instalaciones")
 public class InstalacionesController {
     
     @Autowired
@@ -28,19 +28,19 @@ public class InstalacionesController {
         return "index.html";
     }
     
-    @GetMapping("/verInstalacion")
+    @GetMapping("/verInstalacion")//lista
     public String verInstalacion(Model m) {
         m.addAttribute("Instalaciones", repoInstalaciones.findAll());
         return "instalaciones";
     }
     
-    @GetMapping("/altaInstalacion")
+    @GetMapping("/altaInstalacion")//crear
     public String altaInstalacion(Model m) {
         m.addAttribute("Instalaciones", new instalaciones());
         return "instalaciones";
     }
     
-    @GetMapping("/editarInstalacion")
+    @GetMapping("/editarInstalacion")//actualizar
     public String editarInstalacion(Model m, int IdInstalaciones) {
 
         Optional<instalaciones> Instalaciones = repoInstalaciones.findById(IdInstalaciones);
@@ -52,13 +52,13 @@ public class InstalacionesController {
         return "formularioInstalacion";
     }
     
-    @PostMapping("/guardarInstalacion")
+    @PostMapping("/guardarInstalacion")//guardar
     public String guardarInstalacion(Model m, instalaciones instalacion) {
         repoInstalaciones.save(instalacion);
         return "redirect:verInstalacion";
     }
     
-    @GetMapping("/borrarInstalacion")
+    @GetMapping("/borrarInstalacion")//borrar
     public String borrarInstalacion(Model m, int IdInstalaciones) {
         repoInstalaciones.deleteById(IdInstalaciones);
         return "redirect:verInstalacion";
