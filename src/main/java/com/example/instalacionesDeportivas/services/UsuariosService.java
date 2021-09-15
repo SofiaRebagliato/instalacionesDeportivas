@@ -5,10 +5,13 @@
  */
 package com.example.instalacionesDeportivas.services;
 
+import com.example.instalacionesDeportivas.interfaces.IInstalaciones;
+import com.example.instalacionesDeportivas.interfaces.IUsuarios;
+
 /**
  *
  * @author Sofia
  */
-public class UsuariosService {
+public class UsuariosService implements IUsuarios{
     
 }

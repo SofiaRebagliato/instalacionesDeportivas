@@ -13,14 +13,77 @@
 </head>
 <body>
 <div class="container">
-			<div id="cta">
-			<div class="row">
-				<div class="text-box col-md-offset-1 col-md-10">
+			
+		
+				
 					<h2>Creacion de Instalaciones</h2>
-				</div>
-			</div>
-			<form action=""
-</div>
+				<form action="/instalaciones/guardarInstalacion" method="post"  enctype="multipart/form-data">
+				<div class="row">
+							<div class="col-2">
+								<label for="IdInstalaciones"></label>
+							</div>
+							<div class="col-10">
+								<div class="input-group mb-2">
+
+									<input type="hidden"required class="form-control"
+										name="IdInstalacion" />
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-2">
+								<label for="codigo">Nombre</label>
+							</div>
+							<div class="col-10">
+								<div class="input-group mb-2">
+
+									<input type="text" required class="form-control" name="nombre" />
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-2">
+								<label for="codigo">Descripción</label>
+							</div>
+							<div class="col-10">
+								<div class="input-group mb-2">
+
+									<input type="text" required class="form-control"
+										name="Descripcion" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-2">
+								<label for="codigo">Imagen</label>
+							</div>
+							<div class="col-10">
+								<div class="input-group mb-2">
+                            <input type="file" name="Imagen" class="form-control" >
+                            <input type="submit" class="btn btn-primary" value="Enviar" >
+                        </div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-2">
+								<label for="codigo">Precio</label>
+							</div>
+							<div class="col-10">
+								<div class="input-group mb-2">
+
+									<input type="number" required class="form-control" name="Precio" />
+								</div>
+							</div>
+						</div>
+						
+						
+				</form>
+			
+			
+
 </div>
 
 </body>
