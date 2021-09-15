@@ -74,44 +74,44 @@
 					<ul class="visual-list">
 						<li>
 							<div class="img-holder">
-								<a href="#"><img src="images/baloncesto.png" width="90" alt=""></a>
+								<a><img src="images/baloncesto.png"class="min" width="90" alt=""></a>
 							</div>
 							<div class="text-holder">
-								<h3><a href="#">Entrenamiento de Baloncesto</a></h3>
+								<h3><a href=" ">Entrenamiento de Baloncesto</a></h3>
 								<p>Podra disfrutar de paisajes y rutas montañosas mientras se prepara para este ejercicio que combina coordinación, velocidad y resistencia.</p>
 								
 							</div>
 						</li>
 						<li>
 							<div class="img-holder">
-								<a href="#"><img class="pull-left" src="images/volley.png" width="120" alt=""></a>
+								<a><img  src="images/volley.png" class="min" width="120" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
-								<h3><a href="#">Entrenamiento Intenso de Volleyball</a></h3>
+								<h3><a href=" ">Entrenamiento Intenso de Volleyball</a></h3>
 								<p>Con nuestra gran pista de Volleyball cubierta, podra practicar este deporte , guiados por un profesor altamente cualificado para conseguir el máximo rendimiento. </p>
 							</div>
 						</li>
 						
 						<li>
 							<div class="img-holder">
-								<a href="#"><img src="images/tennis.png" height="114" alt=""></a>
+								<a><img src="images/tennis.png"class="min" height="114" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
 							
-								<h3><a href="#">Pistas de Tenis</a></h3>
+								<h3><a href=" ">Pistas de Tenis</a></h3>
 								<p>Gracias a nuestro atleta Mike Wazowski, aprendera a dominar cualquier ola y asi conseguir romper records mundiales. </p>
 							</div>
 						</li>
 						<li>
 							<div class="img-holder">
-								<a href="#"><img src="images/pesa.png" height="100" alt=""></a>
+								<a><img src="images/pesa.png"class="min" height="100" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
 							
-								<h3><a href="#">Gimnasio</a></h3>
+								<h3><a href=" ">Gimnasio</a></h3>
 								<p>Desde el mismisimo bosque de Sherwood , ha llegado el gran Robin de Locksley , con su ayuda podrá lanzar una flecha a metros de distancia y dar justo en el blanco. </p>
 							</div>
 						</li>
@@ -119,7 +119,7 @@
 				</div>
 				<div class="col-md-7">
 					<div class="slide-holder">
-						<div class="img-slide scroll-trigger"><img src="images/gimnasio.png" height="624" width="684" alt=""></div>
+						<div class="img-slide scroll-trigger"><img id="up"src="images/gimnasio.png" height="624" width="684" alt=""></div>
 					</div>
 				</div>
 			</div>
@@ -274,5 +274,11 @@
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.main.js"></script>
+<script>
+      $('.min').click(function() {
+        var imagen = $(this).attr("src");
+        $('#up').attr("src", imagen);
+      });
+    </script>
 </body>
 </html>
