@@ -25,7 +25,7 @@ public class UsuariosController {
     @GetMapping("/verUsuarios")
     public String verUsuarios(Model m) {
         m.addAttribute("Usuarios", repoUsuarios.findAll());
-        return "usuarios";
+        return "/usuarios/vistaUsuarios";
     }
     
     @GetMapping("/altaUsuarios")
@@ -43,7 +43,7 @@ public class UsuariosController {
         } else {
             return "redirect:verUsuarios";
         }
-        return "formularioUsuarios";
+        return "/usuarios/formularioUsuarios";
     }
     
     @PostMapping("/guardarUsuarios")

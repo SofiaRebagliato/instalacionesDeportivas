@@ -12,6 +12,16 @@ body {
 
 p {
   font-family: "Source Sans Pro", sans-serif; }
+  .fondo{
+  background-image: url("/images/gym.jpeg");
+	background-size: 120vw 130vh;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	
+	filter: blur(3px);
+	}
 
 .btn, a {
   -webkit-transition: color linear .4s, background-color linear .4s, border-color linear .4s;
@@ -54,7 +64,7 @@ p {
 
 .logo {
   float: left;
-  margin: 0 0 0 15px;
+  margin-left:-200px;
   width: 151px;
   height: 41px; }
 
@@ -70,11 +80,11 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 120%;
   z-index: 99;
   padding: 31px 0 32px;
   background: transparent;
- 
+
   -webkit-backface-visibility: hidden;
   /* Prevent Chrome bug because of on-scroll effect in other section */ }
   #header .btn {
@@ -90,16 +100,18 @@ p {
 
 #nav {
   overflow: hidden;
-  text-align: right;
+  text-align:right;
   font-size: 0;
   letter-spacing: -4px;
   white-space: nowrap;
+  
   
   }
   #nav .nav-drop {
     overflow: hidden;
      }
   #nav ul {
+  
     padding: 9px 0 5px;
     margin: 0; }
   #nav li {
@@ -110,7 +122,7 @@ p {
     font-weight: bold;
     letter-spacing: 0;
     white-space: normal;
-    margin-left:-10px;
+    margin-left:-30px;
     }
     #nav li a {
       display: block;
@@ -187,8 +199,11 @@ p {
    }
   .visual .bg-stretch {
     position: absolute;
+    width: 100vw;
+	height: 120vh;
+	left:50%;
     bottom: 0;
-    left: 50%;
+    ;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }

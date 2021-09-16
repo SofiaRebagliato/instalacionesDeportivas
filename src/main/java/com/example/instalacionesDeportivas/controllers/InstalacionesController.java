@@ -49,7 +49,7 @@ public class InstalacionesController {
         } else {
             return "redirect:verInstalacion";
         }
-        return "instalaciones/formularioInstalaciones";
+        return "/instalaciones/formularioInstalaciones";
     }
     
     @PostMapping("/guardarInstalacion")//guardar

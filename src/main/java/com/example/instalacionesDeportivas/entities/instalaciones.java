@@ -23,7 +23,7 @@ public class instalaciones {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private int IdInstalaciones;
-    private String Nombre;
+   public String Nombre;
     private String Descripcion;
     private String Imagen;
     private Float Precio;

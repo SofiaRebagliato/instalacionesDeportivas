@@ -2,7 +2,7 @@
 
 <html xmlns:th="https://www.thymeleaf.org">
     <head>
-        <title>Registro nuevo usuario o administrador</title>
+        <title>Hiberus Sports</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
         <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
-                    <img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt=""/>
+                    <a href="/index"><img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt=""/></a>
                     <h3>Bienvenido a HiberusSports</h3>
                     <p> Todo logro empieza con la decisión de intentarlo </p>
                     <input type="submit" name="" value="Iniciar Sesion"/><br/>
@@ -34,73 +34,89 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Nuevo Administrador</h3>
+                            <form action="/usuarios/guardarUsuarios" method="post">
                             <div class="row register-form">
-                                <div class="col-md-6">
+                                <div class="col-md-6"id="primero">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombre *" value="" />
+                                        <input type="hidden"  name="IdUsuario"required class="form-control" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Primer apellido *" value="" />
+                                        <input type="text"  name="Apellido1"class="form-control" placeholder="Primer apellido *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Segundo apellido *" value="" />
+                                        <input type="text"  name="Apellido2"class="form-control" placeholder="Segundo apellido *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="DNI *" value="" />
+                                        <input type="text"  name="Dni" class="form-control" placeholder="DNI *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  name="Email"class="form-control"  placeholder="Imagen *" value="" />
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        <input type="email" name="Estado" class="form-control" placeholder="Email *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Contraseña *" value="" />
+                                        <input type="text"  name="Imagen"class="form-control" placeholder="URL *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  placeholder="Confirmar Contraseña *" value="" />
+                                        <input type="text"  name="Nombre" class="form-control"  placeholder="Nombre*" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="file" class="form-control"  placeholder="Imagen *" value="" />
+                                        <input type="password"  name="Pass"class="form-control"  placeholder="Contraseña *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden"  name="Tipo"class="form-control" value="Administrador" />
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Registrarse"/>
                                 </div>
                             </div>
+                            </form>
                         </div>
                         <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <h3  class="register-heading">Nuevo Usuario</h3>
+                            <form action="/usuarios/guardarUsuarios" method="post">
                             <div class="row register-form">
-                                <div class="col-md-6">
+                                 <div class="col-md-6"id="primero">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombre *" value="" />
+                                        <input type="hidden"  name="IdUsuario"required class="form-control" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Primer apellido *" value="" />
+                                        <input type="text"  name="Apellido1"class="form-control" placeholder="Primer apellido *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Segundo apellido *" value="" />
+                                        <input type="text"  name="Apellido2"class="form-control" placeholder="Segundo apellido *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="DNI *" value="" />
+                                        <input type="text"  name="Dni" class="form-control" placeholder="DNI *" value="" />
                                     </div>
-                                   
+                                    <div class="form-group">
+                                        <input type="text"  name="Email"class="form-control"  placeholder="Email *" value="" />
+                                    </div>
+                                    
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        <input type="text" name="Estado" class="form-control" placeholder="Activo o baja *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Contraseña *" value="" />
+                                        <input type="text"  name="Imagen"class="form-control" placeholder="URL *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  placeholder="Confirmar Contraseña*" value="" />
+                                        <input type="text"  name="Nombre" class="form-control"  placeholder="Nombre*" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="file" class="form-control"  placeholder="Imagen *" value="" />
+                                        <input type="password"  name="Pass"class="form-control"  placeholder="Contraseña *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden"  name="Tipo"class="form-control" readonly="readonly"value="Usuario" />
                                     </div>
                                     <input type="submit" class="btnRegister"  value="Registrarse"/>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
