@@ -31,7 +31,7 @@ public class UsuariosController {
     @GetMapping("/altaUsuarios")
     public String altaUsuarios(Model m) {
         m.addAttribute("Usuarios", new usuarios());
-        return "formularioUsuarios";
+        return "/usuarios/formularioUsuarios";
     }
     
     @GetMapping("/editarUsuarios")
