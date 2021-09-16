@@ -31,13 +31,13 @@ public class InstalacionesController {
     @GetMapping("/verInstalacion")//lista
     public String verInstalacion(Model m) {
         m.addAttribute("Instalaciones", repoInstalaciones.findAll());
-        return "instalaciones";
+        return "/instalaciones/vistaInstalaciones";
     }
     
     @GetMapping("/altaInstalacion")//crear
     public String altaInstalacion(Model m) {
         m.addAttribute("Instalaciones", new instalaciones());
-        return "instalaciones";
+        return "instalaciones/formularioInstalaciones";
     }
     
     @GetMapping("/editarInstalacion")//actualizar
@@ -49,7 +49,7 @@ public class InstalacionesController {
         } else {
             return "redirect:verInstalacion";
         }
-        return "formularioInstalacion";
+        return "instalaciones/formularioInstalaciones";
     }
     
     @PostMapping("/guardarInstalacion")//guardar

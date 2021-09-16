@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hiberus Sports</title>
 	<meta name="author" content="Manuel López López,Sofia Rebagliato Torregrosa">
-	<link rel="icon" type="image/jpg" href="../../static/favicons/logoHiberus.jpg" sizes="16x16">
+	<link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
 	<link rel="stylesheet" href="/css/bootstrap.css">
-	<link rel="stylesheet" href="../../static/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../../static/css/all.css">
+	<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/all.css">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -51,7 +51,7 @@
 				<span class="info">Empieza ahora</span>
 			</div>
 		</div>
-		<img src="images/gym.jpeg" alt="" class="bg-stretch">
+		<img src="/images/gym.jpeg" alt="" class="bg-stretch">
 	</section>
 	<section class="main">
 		<div class="container">
@@ -75,7 +75,7 @@
 					
 					<li th:each="insta:${instalaciones}">
 							<div class="img-holder">
-								<a href="#"><img src="../static/images/baloncesto.png" width="90" alt=""></a>
+								<a href="#"><img src="/images/baloncesto.png" width="90" alt=""></a>
 							</div>
 							<div class="text-holder">
 								<h3><a href="#" th:text="${insta.Nombre}"></a></h3>
@@ -85,7 +85,7 @@
 						</li>
 						<li>
 							<div class="img-holder">
-								<a><img src="images/baloncesto.png"class="min" width="90" alt=""></a>
+								<a><img src="/images/baloncesto.png"class="min" width="90" alt=""></a>
 							</div>
 							<div class="text-holder">
 								<h3><a href=" ">Entrenamiento de Baloncesto</a></h3>
@@ -95,7 +95,7 @@
 						</li>
 						<li>
 							<div class="img-holder">
-								<a><img  src="images/volley.png" class="min" width="120" alt=""></a>
+								<a><img  src="/images/volley.png" class="min" width="120" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
@@ -106,7 +106,7 @@
 						
 						<li>
 							<div class="img-holder">
-								<a><img src="images/tennis.png"class="min" height="114" alt=""></a>
+								<a><img src="/images/tennis.png"class="min" height="114" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
@@ -117,7 +117,7 @@
 						</li>
 						<li>
 							<div class="img-holder">
-								<a><img src="images/pesa.png"class="min" height="100" alt=""></a>
+								<a><img src="/images/pesa.png"class="min" height="100" alt=""></a>
 							</div>
 							<div class="text-holder">
 							</br>
@@ -130,7 +130,7 @@
 				</div>
 				<div class="col-md-7">
 					<div class="slide-holder">
-						<div class="img-slide scroll-trigger"><img id="up"src="images/gimnasio.png" height="624" width="684" alt=""></div>
+						<div class="img-slide scroll-trigger"><img id="up"src="/images/gimnasio.png" height="624" width="684" alt=""></div>
 					</div>
 				</div>
 			</div>
