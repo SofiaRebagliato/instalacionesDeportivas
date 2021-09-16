@@ -21,7 +21,7 @@ public class instalaciones {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
+    
     private int IdInstalaciones;
     private String Nombre;
     private String Descripcion;
