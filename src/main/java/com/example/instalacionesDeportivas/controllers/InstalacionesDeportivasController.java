@@ -24,7 +24,7 @@ public class InstalacionesDeportivasController {
 	    private InstalacionesRepository repoInstalaciones;
     
 	@GetMapping("/index")
-	public String getPrueba(Model m) {
+	public String getIndex(Model m) {
 		m.addAttribute("instalaciones", repoInstalaciones.findAll());
 
 		return "inicio/index.html";
