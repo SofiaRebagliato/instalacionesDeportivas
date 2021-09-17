@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.instalacionesDeportivas.repositories;
 
-/**
- *
- * @author Sofia
- */
-public interface ReservasRepository {
+import com.example.instalacionesDeportivas.entities.reservas;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ReservasRepository extends CrudRepository<reservas, Integer>{
     
 }
