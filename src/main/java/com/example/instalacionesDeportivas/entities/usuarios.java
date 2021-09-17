@@ -22,16 +22,16 @@ public class usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
-    public int IdUsuario;
-    private String Apellido1;
-    private String Apellido2;
-    private String Dni;
-    private String Email;
-    private String Estado;
-    private String Imagen;
-    private String Nombre;
-    private String Pass;
-    private String Tipo;
+    private int id_usuario;
+    private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String email;
+    private String dni;
+    private String pass;
+    private String imagen;
+    private String tipo;
+    private String estado;
    
     
     @OneToMany(mappedBy = "usuarios") 

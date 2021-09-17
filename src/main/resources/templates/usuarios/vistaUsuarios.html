@@ -188,6 +188,18 @@
 	filter: blur(3px);
 	
 }
+.btnVolver{
+    
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 10%;
+    cursor: pointer;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -218,12 +230,12 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>IdUsuario</th>
-                        <th>Email</th>						
-                        <th>Contraseña</th>
-                        <th>Nombre</th>
+                        <th>Nombre</th>						
                         <th>Apellido1</th>
                         <th>Apellido2</th>
+                        <th>Email</th>
                         <th>Dni</th>
+                        <th>Contraseña</th>
                         <th>Imagen</th>
                         <th>Tipo</th>
                         <th>Estado</th>
@@ -234,37 +246,40 @@ $(document).ready(function(){
                 <tbody>
 				<tr th:each="usu:${Usuarios}">
 
-					<td th:text="${usu.IdUsuarios}"></td>
-					<td th:text="${usu.Email}"></td>
-					<td th:text="${usu.Pass}"></td>
-					<td th:text="${usu.Nombre}"></td>
-					<td th:text="${usu.Apellido1}"></td>
-					<td th:text="${usu.Apellido2}"></td>
-					<td th:text="${usu.Dni}"></td>
-					<td><img th:src="${usu.Imagen}"width="100px"/></td>
-					<td th:text="${usu.Tipo}"></td>
-					<td th:text="${usu.Estado}"></td>
+					<td th:text="${usu.id_usuario}"></td>
+					<td th:text="${usu.nombre}"></td>
+					<td th:text="${usu.apellido1}"></td>
+					<td th:text="${usu.apellido2}"></td>
+					<td th:text="${usu.email}"></td>
+					<td th:text="${usu.dni}"></td>
+					<td th:text="${usu.pass}"></td>
+					<td><img th:src="${usu.imagen}"width="100px"/></td>
+					<td th:text="${usu. tipo}"></td>
+					<td th:text="${usu.estado}"></td>
 					<td> <!-- Editar falta el script -->
-						<a th:href="@{/usuarios/editarUsuarios(IdUsuarios=${usu.IdUsuarios})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-						<a th:href="@{/usuarios/borrarUsuarios(IdUsuarios=${usu.IdUsuarios})}"class="Borrar"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+						<a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+						<a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="Borrar"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 					
 					</td>
+					
 
 				</tr>
+				
 
 			</tbody>
                
             </table>
             
+            <input type="button" onclick="history.back()" class="btnVolver" name="volver atrás" value="Volver atrás">
         </div>
     </div>        
 </div> 
 <script>
-		function lectura(IdUsuarios) {
+		function lectura(id_usuario) {
 			$.ajax({
 				url : "/usuarios/editarUsuarios",
 				data : {
-					IdIUsuarios : IdUsuarios
+					id_usuario : id_usuario
 				},
 				datatype : "html",
 				success : function(datos) {

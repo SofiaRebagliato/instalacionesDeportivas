@@ -35,9 +35,9 @@ public class UsuariosController {
     }
     
     @GetMapping("/editarUsuarios")
-    public String editarUsuarios(Model m, int IdUsuario) {
+    public String editarUsuarios(Model m, int id_usuario) {
 
-        Optional<usuarios> Usuarios = repoUsuarios.findById(IdUsuario);
+        Optional<usuarios> Usuarios = repoUsuarios.findById(id_usuario);
         if (Usuarios.isPresent()) {
             m.addAttribute("Usuarios", Usuarios.get());
         } else {
@@ -53,8 +53,8 @@ public class UsuariosController {
     }
     
     @GetMapping("/borrarUsuarios")
-    public String borrarUsuarios(Model m, int IdUsuario) {
-        repoUsuarios.deleteById(IdUsuario);
+    public String borrarUsuarios(Model m, int id_usuario) {
+        repoUsuarios.deleteById(id_usuario);
         return "redirect:verUsuarios";
     }
 }

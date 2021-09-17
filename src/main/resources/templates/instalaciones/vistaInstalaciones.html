@@ -188,6 +188,18 @@
 	filter: blur(3px);
 	
 }
+.btnVolver{
+    
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 10%;
+    cursor: pointer;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -244,8 +256,10 @@ $(document).ready(function(){
 			</tbody>
                
             </table>
+            <input type="button" onclick="history.back()" class="btnVolver" name="volver atrás" value="Volver atrás">
             
         </div>
+        
     </div>        
 </div> 
 <script>
@@ -261,6 +275,7 @@ $(document).ready(function(){
 				}
 			})
 		}
+		
 	</script>    
 </body>
 </html>

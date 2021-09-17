@@ -529,8 +529,11 @@ a {
     width: 50%;
     letter-spacing: 0; }
   .testimonials .img-holder img {
+  border-radius:70%;
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-bottom: 10px; }
+    
   .testimonials .img-holder:before {
     content: '';
     display: inline-block;
