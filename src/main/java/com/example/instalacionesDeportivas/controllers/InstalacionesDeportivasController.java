@@ -29,4 +29,10 @@ public class InstalacionesDeportivasController {
 
 		return "inicio/index.html";
 	}
+	@GetMapping("/login")
+	public String login(Model m) {
+		m.addAttribute("instalaciones", repoInstalaciones.findAll());
+
+		return "Login/vistaLogin.html";
+	}
 }
