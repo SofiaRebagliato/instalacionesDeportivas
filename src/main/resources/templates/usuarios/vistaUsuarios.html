@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Usuarios</title>
+<link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -222,7 +223,7 @@ $(document).ready(function(){
                         <h2> <b>Administración de Usuarios</b></h2>
                     </div>
                     <div class="col-xs-7">
-                        <a href="altaUsuarios" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Nuevo Usuario</span></a>						
+                        <a href="/usuarios/altaUsuarios" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Nuevo Usuario</span></a>						
                     </div>
                 </div>
             </div>
@@ -239,37 +240,27 @@ $(document).ready(function(){
                         <th>Imagen</th>
                         <th>Tipo</th>
                         <th>Estado</th>
-                        
-                        
                     </tr>
                 </thead>
                 <tbody>
-				<tr th:each="usu:${Usuarios}">
-
-					<td th:text="${usu.id_usuario}"></td>
-					<td th:text="${usu.nombre}"></td>
-					<td th:text="${usu.apellido1}"></td>
-					<td th:text="${usu.apellido2}"></td>
-					<td th:text="${usu.email}"></td>
-					<td th:text="${usu.dni}"></td>
-					<td th:text="${usu.pass}"></td>
-					<td><img th:src="${usu.imagen}"width="100px"/></td>
-					<td th:text="${usu. tipo}"></td>
-					<td th:text="${usu.estado}"></td>
-					<td> <!-- Editar falta el script -->
-						<a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-						<a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="Borrar"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-					
-					</td>
-					
-
-				</tr>
-				
-
-			</tbody>
-               
+                    <tr th:each="usu:${Usuarios}">
+			<td th:text="${usu.id_usuario}"></td>
+			<td th:text="${usu.nombre}"></td>
+			<td th:text="${usu.apellido1}"></td>
+			<td th:text="${usu.apellido2}"></td>
+			<td th:text="${usu.email}"></td>
+			<td th:text="${usu.dni}"></td>
+			<td th:text="${usu.pass}"></td>
+			<td><img th:src="${usu.imagen}"width="100px"/></td>
+			<td th:text="${usu. tipo}"></td>
+			<td th:text="${usu.estado}"></td>
+			<td> <!-- Editar falta el script -->
+                            <a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="Borrar"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+			</td>
+                    </tr>
+		</tbody>
             </table>
-            
             <input type="button" onclick="history.back()" class="btnVolver" name="volver atrás" value="Volver atrás">
         </div>
     </div>        

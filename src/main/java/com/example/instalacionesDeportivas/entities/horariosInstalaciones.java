@@ -24,14 +24,14 @@ public class horariosInstalaciones {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdHorario;
+    private int id_horario;
     
     @DateTimeFormat(pattern = "EEEE")
-    private Date Dia_semana;
+    private Date dia_semana;
     
     @DateTimeFormat(pattern = "HH:mm")
-    private Date Hora_inicio;
-    private Date Hora_fin;
+    private Date hora_inicio;
+    private Date hora_fin;
     
     @OneToMany(mappedBy = "horariosInstalaciones") 
     private List<reservasHorarios> reservasHorarios;
