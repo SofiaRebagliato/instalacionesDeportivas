@@ -25,13 +25,13 @@ public class InstalacionesDeportivasController {
     
 	@GetMapping("/index")
 	public String getIndex(Model m) {
-		m.addAttribute("instalaciones", repoInstalaciones.findAll());
+		
 
 		return "inicio/index.html";
 	}
 	@GetMapping("/login")
-	public String login(Model m) {
-		m.addAttribute("instalaciones", repoInstalaciones.findAll());
+	public String login() {
+	
 
 		return "Login/vistaLogin.html";
 	}
