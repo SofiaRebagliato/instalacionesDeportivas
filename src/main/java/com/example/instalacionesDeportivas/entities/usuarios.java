@@ -22,7 +22,7 @@ public class usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
-    private int id_usuario;
+    private Integer id_usuario;
     private String nombre;
     private String apellido1;
     private String apellido2;

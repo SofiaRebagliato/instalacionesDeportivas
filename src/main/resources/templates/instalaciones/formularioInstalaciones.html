@@ -9,13 +9,34 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/estilosUsuarios.css">
+        <style>
+        h2{
+        color:white;}
+        label{
+        color:white;}
+        .btnCrear{
+    		float:right;
+    		border: none;
+    		border-radius: 1.5rem;
+    		padding:10px;
+    		background: white;
+    		color: #0062cc;
+    		font-weight: 600;
+    		width: 10%;
+    		cursor: pointer;
+}
+
+        </style>
     </head>
     <body>
         <div class="fondo">
     </div>
+    <i class="icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;" ></i>
         <div class="container register">
+        <div class="row"></div>
+        
             <h2>Creacion de Instalaciones</h2>
-            <form action="/instalaciones/guardarInstalacion" method="post"  enctype="multipart/form-data">
+            <form action="/instalaciones/guardarInstalacion"th:object="${Instalaciones}" method="post"  enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-2">
                         <label for="IdInstalaciones"></label>
@@ -23,8 +44,7 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                            <input type="hidden"required class="form-control"
-                                   name="IdInstalacion" />
+                            <input th:field="*{IdInstalaciones}" type="hidden"required class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -36,7 +56,7 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                            <input type="text" required class="form-control" name="nombre" />
+                           <i class="far fa-2x fa-user"style="color:white;">&nbsp;</i> <input type="text"th:field="*{Nombre}" required class="form-control"  />
                         </div>
                     </div>
                 </div>
@@ -48,8 +68,7 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                            <input type="text" required class="form-control"
-                                   name="Descripcion" />
+                           <i class="far fa-2x fa-edit"style="color:white;"></i> <input type="text"th:field="*{Descripcion}" required class="form-control"name="Descripcion" />
                         </div>
                     </div>
                 </div>
@@ -59,7 +78,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-                            <input type="text" name="Imagen" class="form-control" >
+                           <i class="far fa-2x fa-file-image"style="color:white;margin-right:5px;">&nbsp;</i> <input type="text"th:field="*{Imagen}" name="Imagen" class="form-control" >
                             
                         </div>
                     </div>
@@ -72,18 +91,18 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                            <input type="number" required class="form-control" name="Precio" />
+                           <i class="fas fa-2x fa-euro-sign"style="color:white;margin-right:17px;"></i> <input type="number"th:field="*{Precio}" required class="form-control" name="Precio" />
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Enviar" >
+                <input type="submit" class="btnCrear" value="Crear" >
 
 
             </form>
 
+</div>
 
-
-        </div>
+        
 
     </body>
 </html>

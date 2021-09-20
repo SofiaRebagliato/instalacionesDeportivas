@@ -6,7 +6,7 @@
 <title>Usuarios</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,6 +17,10 @@
 		font-family: 'Varela Round', sans-serif;
 		font-size: 13px;
 	}
+	i:hover{
+	color:yellow !important;
+	
+}
     .table-responsive {
         margin: 30px 0;
     }
@@ -40,6 +44,9 @@
 		font-size: 24px;
 		
 	}
+	#volver:hover{
+color:yellow !important;
+}
 	.table-title .btn {
 		color: #566787;
 		float: right;
@@ -210,6 +217,7 @@ $(document).ready(function(){
 <body>
 <div class="fondo">
     </div>
+     <i id="volver"class="fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;"></i>
 <div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -222,7 +230,7 @@ $(document).ready(function(){
                         <h2> <b>Administración de Usuarios</b></h2>
                     </div>
                     <div class="col-xs-7">
-                        <a href="altaUsuarios" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Nuevo Usuario</span></a>						
+                        <a href="/usuarios/altaUsuarios" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Nuevo Usuario</span></a>						
                     </div>
                 </div>
             </div>
@@ -258,19 +266,18 @@ $(document).ready(function(){
 					<td th:text="${usu.estado}"></td>
 					<td> <!-- Editar falta el script -->
 						<a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-						<a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="Borrar"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+						<a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="Borrar" title="Borrar" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 					
 					</td>
 					
 
 				</tr>
-				
 
 			</tbody>
                
             </table>
             
-            <input type="button" onclick="history.back()" class="btnVolver" name="volver atrás" value="Volver atrás">
+          
         </div>
     </div>        
 </div> 
