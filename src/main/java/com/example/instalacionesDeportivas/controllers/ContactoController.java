@@ -1,6 +1,9 @@
 package com.example.instalacionesDeportivas.controllers;
 
 import com.example.instalacionesDeportivas.services.ContactoService;
+
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
+@RolesAllowed({"ROLE_USER"})
 public class ContactoController {
     
     @Autowired

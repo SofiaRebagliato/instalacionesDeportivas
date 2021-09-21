@@ -30,11 +30,15 @@ public class usuarios {
     private String dni;
     private String pass;
     private String imagen;
+//    @OneToMany(mappedBy = "usuarios")
     private String tipo;
     private String estado;
    
     
     @OneToMany(mappedBy = "usuarios") 
     private List<reservas> reservas;
+    
+    
+    
     
 }
