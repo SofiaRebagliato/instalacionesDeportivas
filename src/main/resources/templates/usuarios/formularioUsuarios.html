@@ -40,13 +40,13 @@
                             <div class="row register-form">
                                 <div class="col-md-6"id="primero">
                                     <div class="form-group">
-                                        <input type="hidden" th:field="id_usuario"required class="form-control" />
+                                        <input type="hidden" th:field="*{id_usuario}"required class="form-control" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text"  th:field="nombre"class="form-control" placeholder="Nombre *" />
+                                        <input type="text"  th:field="*{nombre}"class="form-control" placeholder="Nombre *" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text"  th:field="apellido1"class="form-control" placeholder="Primer apellido *"  />
+                                        <input type="text"  th:field="*{apellido1}"class="form-control" placeholder="Primer apellido *"  />
                                     </div>
                                     <div class="form-group">
                                         <input type="text"  th:field="apellido2" class="form-control" placeholder="Segundo apellido *" />
