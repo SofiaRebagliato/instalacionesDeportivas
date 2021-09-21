@@ -67,6 +67,12 @@
                                 </div>
                             </fieldset>
                         </form>
+                        <!--<div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+                            th:text="${mensaje}"
+                            class="alert">
+                        </div>-->
+                        <div style="color: red" th:if="${error!=null}" th:text="${error}"></div>
+                        <div style="color: green" th:if="${success!=null}" th:text="${success}"></div>
                     </div>
                 </div>
             </div>

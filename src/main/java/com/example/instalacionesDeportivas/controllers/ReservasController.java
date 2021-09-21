@@ -30,7 +30,7 @@ public class ReservasController {
     @GetMapping("/nuevaReserva")
     public String nuevaReserva(Model m) {
         m.addAttribute("Reservas", new reservas());
-        return "/reservas/formularioReservas";
+        return "reservas/formularioReservas";
     }
     
     @GetMapping("/editarReserva")

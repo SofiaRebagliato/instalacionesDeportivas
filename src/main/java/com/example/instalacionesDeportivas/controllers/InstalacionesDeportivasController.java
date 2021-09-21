@@ -21,4 +21,9 @@ public class InstalacionesDeportivasController {
             return "contacto/formularioContacto.html";
 	}
         
+        @GetMapping("/reservas")
+	public String reservas() {
+            return "reservas/vistaReservas.html";
+	}
+        
 }
