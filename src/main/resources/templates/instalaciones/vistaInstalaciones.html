@@ -251,7 +251,7 @@ $(document).ready(function(){
 					<td th:text="${insta.Descripcion}"></td>
 					<td><img th:src="${insta.Imagen}"width="100px"/></td>
 					<td th:text="${insta.Precio}"></td>
-					<td> <!-- Editar falta el script -->
+					<td> 
 						<a th:href="@{/instalaciones/editarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
 						<a th:href="@{/instalaciones/borrarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 					
@@ -268,20 +268,6 @@ $(document).ready(function(){
         
     </div>        
 </div> 
-<script>
-		function lectura(IdInstalaciones) {
-			$.ajax({
-				url : "/instalaciones/editarInstalacion",
-				data : {
-					IdInstalaciones : IdInstalaciones
-				},
-				datatype : "html",
-				success : function(datos) {
-					
-				}
-			})
-		}
-		
-	</script>    
+    
 </body>
 </html>

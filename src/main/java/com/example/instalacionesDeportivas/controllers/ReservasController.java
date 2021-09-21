@@ -4,13 +4,16 @@ import com.example.instalacionesDeportivas.entities.reservas;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
 import com.example.instalacionesDeportivas.services.ReservasService;
 import java.util.Optional;
+
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+@RolesAllowed({"ROLE_USER","ROLE_ADMIN"})
 @Controller
 @RequestMapping("/reservas")
 public class ReservasController {

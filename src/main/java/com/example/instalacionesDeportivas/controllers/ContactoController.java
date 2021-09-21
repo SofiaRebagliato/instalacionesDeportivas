@@ -1,6 +1,9 @@
 package com.example.instalacionesDeportivas.controllers;
 
 import com.example.instalacionesDeportivas.services.ContactoService;
+
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RolesAllowed({"ROLE_USER"})
 public class ContactoController {
     
     @Autowired
