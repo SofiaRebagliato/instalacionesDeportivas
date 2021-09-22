@@ -118,25 +118,30 @@
                                             // if so, remove the element from the "Draggable Events" list
                                             $(this).remove();
                                     }
-
-                            },
                           
                             events: [
                                     {
                                             title: 'All Day Event',
                                             start: new Date(y, m, 1)
                                     },
-                                    + ' <th:block th:each="evt:${eventos}"> ' +
+                                    
+                                    //+ ' <th:block th:each="evt:${eventos}"> ' +
                                     {
-                                            id: 999,
-                                            title: 'Nueva reserva',
-                                            start: new Date(y, m, d-3, 16, 0),
-                                            allDay: false,
-                                            url: 'https://ccp.cloudaccess.net/aff.php?aff=5188'
+                                           // ' <td th:text="${evt.IdR}"></td> ', +
+                                           //+ ' <td th:text="${evt.Fecha}"></td> ', +
+                                           //+ ' <td th:text="${evt.Hora}"></td> ', +
+                                           //+ ' <td th:text="${evt.IdUsuario}"></td> ', +
+                                           //+ ' <a th:href="@{/reservas/editarReserva(IdR=${evt.IdR})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a> ', +
+                                           //+ ' <a th:href="@{/reservas/borrarReserva(IdR=${evt.IdR})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a> ' + 
                                             //<th:block th:if="${campo=='1'}">className: 'info',</th:block>
                                             //<th:block th:if="${campo=='2'}">className: 'important',</th:block>
+                                            id: 9,
+                                            title: 'Event',
+                                            start: new Date(y, m, d-3, 16, 0),
+                                            allDay: false,
+                                            className: 'info'
                                     },
-                                    + ' </th:block> ' +
+                                    //+ ' </th:block> ' +
                                     {
                                             id: 999,
                                             title: 'Repeating Event',

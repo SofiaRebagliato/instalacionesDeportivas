@@ -11,80 +11,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/estilosUsuarios.css">
         <style>
-        h2{
-        color:white;}
-        label{
-        color:white;}
-        .btnCrear{
-    		float:right;
-    		border: none;
-    		border-radius: 1.5rem;
-    		padding:10px;
-    		background: white;
-    		color: #0062cc;
-    		font-weight: 600;
-    		width: 10%;
-    		cursor: pointer;
-}
-
         </style>
     </head>
     <body>
-        <div class="fondo">
-    </div>
-    <i class="icono fas fa-chevron-circle-left" onclick="history.back()" style="font-size:70px;color:white; margin-left:20px;margin-top:20px;" ></i>
-        <div class="container register">
-        <div class="row"></div>
-            <h2>Nueva reserva</h2>
-            <form action="/reservas/guardarReserva"th:object="${Reservas}" method="post"  enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-2">
-                        <label for="IdR"></label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-
-                            <input th:field="*{IdR}" type="hidden"required class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2">
-                        <label for="IdInstalacion">Instalación</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-
-                           <i class="far fa-2x fa-user" style="color:white;">&nbsp;</i> <input type="text"th:field="*{IdInstalacion}" required class="form-control"  />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2">
-                        <label for="Fecha">Fecha</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-
-                           <i class="far fa-2x fa-edit"style="color:white;"></i> <input type="text"th:field="*{Fecha}" required class="form-control"name="Fecha" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="Hora">Hora</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-                           <i class="far fa-2x fa-file-image"style="color:white;margin-right:5px;">&nbsp;</i> <input type="text"th:field="*{Hora}" name="Hora" class="form-control" >
-                            
-                        </div>
-                    </div>
-                </div>
-                <input type="submit" class="btnCrear" value="Guardar" >
-            </form>
+        <div class="container">
+            <!-- Formulario de reservas en vistaReservas.html-->
         </div>
     </body>
 </html>
