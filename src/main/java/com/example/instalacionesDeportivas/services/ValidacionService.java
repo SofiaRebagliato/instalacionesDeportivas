@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.example.instalacionesDeportivas.dto.UsuarioDto;
 import com.example.instalacionesDeportivas.entities.usuarios;
 import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
 
-import dto.UsuarioDto;
 @Service
 public class ValidacionService implements UserDetailsService{
  
@@ -25,8 +25,7 @@ public class ValidacionService implements UserDetailsService{
 			UsuarioDto user = new UsuarioDto(
 						usuarios.get().getId_usuario(),
 						usuarios.get().getNombre(),
-						usuarios.get().getPass(),
-						usuarios.get().getTipo());
+						usuarios.get().getPass(),usuarios.get().getTipo());
 			return user;	
 		}throw new UsernameNotFoundException("Usuario o contraseña incorrecto");
 		
