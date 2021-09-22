@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.annotation.security.RolesAllowed;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 //import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ public class UsuariosController {
     
     @Autowired
     private UsuariosService UsuariosService;
+    @Autowired
+    private PasswordEncoder PassEncod;
     
     @GetMapping("/verUsuarios")
 //    @Secured({"ROLE_ADMIN"})
@@ -56,6 +59,7 @@ public class UsuariosController {
     @PostMapping("/guardarUsuarios")
 //    @Secured({"ROLE_ADMIN","ROLE_USER"})
     public String guardarUsuarios(Model m, usuarios usuario) {
+    	usuario.setPass(PassEncod.encode(usuario.getPass()));
         repoUsuarios.save(usuario);
         return "redirect:verUsuarios";
     }

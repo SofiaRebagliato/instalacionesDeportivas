@@ -21,7 +21,6 @@ public class usuarios {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
     private Integer id_usuario;
     private String nombre;
     private String apellido1;
@@ -30,7 +29,6 @@ public class usuarios {
     private String dni;
     private String pass;
     private String imagen;
-//    @OneToMany(mappedBy = "usuarios")
     private String tipo;
     private String estado;
    
