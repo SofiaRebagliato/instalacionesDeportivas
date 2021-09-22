@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="/css/bootstrap.css">
 	<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/all.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>   
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<style>
 	.tagline{
@@ -23,6 +26,7 @@
 	text-align: justify !important;
 	}
 	</style>
+	 
 </head>
 <body>
 <div id="wrapper">
@@ -83,6 +87,25 @@
 			</div>
 		</div>
 	</section>
+	<div class="slider">
+            <div><img src="/images/pistaBaloncesto.jpg" title="Title of image1"></div>
+            <div><img src="/images/" title="Title of image2"></div>
+            <div><img src="/path/to/image3.jpg" title="Title of image3"></div>
+        </div>
+	
+	
+	</div>
+	<script>
+            $('.slider').bxSlider({
+                autoControls: true,
+                auto: true,
+                pager: true,
+                slideWidth: 800,
+                mode: 'fade',
+                captions: true,
+                speed: 1000
+            });
+	</script>
 
 </body>
 </html>
