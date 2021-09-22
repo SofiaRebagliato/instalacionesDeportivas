@@ -38,6 +38,11 @@ public class InstalacionesController {
         m.addAttribute("Instalaciones", repoInstalaciones.findAll());
         return "/instalaciones/vistaInstalaciones";
     }
+    @GetMapping("/vistaInstalacion")
+//  @Secured({"ROLE_ADMIN"})
+  public String vistaInstalacion(Model m) {
+      return "/instalaciones/instalaciones";
+  }
     
     @GetMapping("/altaInstalacion")//crear
 //    @Secured({"ROLE_ADMIN"})

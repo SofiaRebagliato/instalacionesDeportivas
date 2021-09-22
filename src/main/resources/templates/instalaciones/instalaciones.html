@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hiberus Sports</title>
+	<meta name="author" content="Manuel López López,Sofia Rebagliato Torregrosa">
+	<link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/all.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>   
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<style>
+	.tagline{
+	color:yellow;
+	
+	text-shadow:  2px 2px 3px black;
+	}
+	h2{
+	font-size: 40px !important;
+	}
+	.text-box p{
+	text-align: justify !important;
+	}
+	</style>
+	 
+</head>
+<body>
+<div id="wrapper">
+		<header id="header">
+			<div class="container">
+				<div class="logo"><a href="/index"><img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt="fuente-de-los-vengadores" border="0"></a></div>
+				<nav id="nav">
+					<div class="opener-holder">
+						<a href="#" class="nav-opener"><span></span></a>
+					</div>
+					
+					<div class="nav-drop">
+						<ul>
+							<li class="active visible-sm visible-xs"><a href="index">Inicio</a></li>
+							<li><a href="#" class="btn btn-primary rounded">Reservas</a></li>
+							<li><a href="instalaciones/verInstalacion" class="btn btn-primary rounded">Instalaciones</a></li>
+							<li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
+							<li><a href="/login" class="btn btn-primary rounded">Iniciar Sesión</a></li>
+						</ul>
+						<div class="drop-holder visible-sm visible-xs">
+							<span>Siguenos</span>
+							<ul class="social-networks">
+								<li><a class="fa fa-github" href="#"></a></li>
+								<li><a class="fa fa-twitter" href="#"></a></li>
+								<li><a class="fa fa-facebook" href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<section class="visual">
+		<div class="container">
+			<div class="text-block">
+				<div class="heading-holder">
+					<h1>Nuestras Instalaciones</h1>
+				</div>
+				<p class="tagline">Las mejores zonas para desarrollar todo tipo de actividades</p>
+				<br>
+			</div>
+		</div>
+		<img src="https://www.estudiadeporte.com/wp-content/uploads/tecnico-acceso-mantenimiento-instalaciones-deportivas.jpg" alt="" class="bg-stretch">
+	</section>
+	<section class="main">
+		<div class="container">
+			<div id="cta">
+				<div class="btn btn-primary rounded" ><a href="/index">Hiberus Sports</a>/Instalaciones</div>
+				
+			</div>
+			<div class="row">
+				<div class="text-box col-md-offset-1 col-md-10">
+					<h2>Más de 20.000 m² solo para el deporte</h2>
+					<p>Las instalaciones más potentes de tenis, pádel, natacion, baloncesto, etc... ponen a tu alcance los diferentes programas y actividades de las variadas escuelas deportivas.</p>
+					<p>Nuestro objetivo es plantear el deporte como un estilo de vida, como una actividad que prolonga la vida. Pero somos mucho más que deporte y, por ello, promocionamos el deporte y el ocio en familia. Ofrecemos diferentes alternativas para cada uno de los componentes.</p>
+					<p>Todos estos programas van a estar potenciados con unos espectaculares servicios personalizados de gimnasio, ya que contamos con las máquinas tecnológicamente más avanzadas del mercado.</p>
+					<p>Hiberus Sports tiene unas magníficas instalaciones deportivas donde niños y mayores hacen deporte, se divierten… y mucho más.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="slider">
+            <div><img src="/images/pistaBaloncesto.jpg" ></div>
+            <div><img src="/images/pistaTenis.jpg" ></div>
+            <div><img src="/images/pistaVoleyball.jpg"></div>
+            <div><img src="/images/gym.jpeg"></div>
+            <div><img src="/images/gym.jpeg"></div>
+            <div><img src="/images/gym.jpeg"></div>
+            <div><img src="/images/gym.jpeg"></div>
+        </div>
+	
+	
+	</div>
+	<script>
+            $('.slider').bxSlider({
+                autoControls: true,
+                auto: true,
+                pager: true,
+                slideWidth: 600,
+                mode: 'fade',
+                captions: true,
+                speed: 500
+            });
+	</script>
+
+</body>
+</html>
