@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.example.instalacionesDeportivas.entities.usuarios;
 import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
 
-import dto.UsuarioDto;
+import com.example.instalacionesDeportivas.dto.UsuarioDto;
 @Service
 public class ValidacionService implements UserDetailsService{
  

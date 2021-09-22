@@ -1,4 +1,4 @@
-package dto;
+package com.example.instalacionesDeportivas.dto;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,8 +18,7 @@ public class UsuarioDto implements UserDetails {
 	 private String nombre;
 	 private String pass;
 	 private String tipo;
-	 
-	@Override
+@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		if(tipo.equals("Administrador")) {
 			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
@@ -68,3 +67,4 @@ public class UsuarioDto implements UserDetails {
 	}
 
 }
+
