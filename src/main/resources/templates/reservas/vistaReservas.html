@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
         <script src="/js/calendarioReservas.js"></script>
-        <script>
+        <script th:inline="javascript">
 
             $(document).ready(function() {
                 var date = new Date();
@@ -118,28 +118,30 @@
                                             // if so, remove the element from the "Draggable Events" list
                                             $(this).remove();
                                     }
-                          
+
+                            },
+
                             events: [
+                                    /*[# th:each="evt:${eventos}" ]*/
+                                    {
+                                            title: [[${evt.instalaciones.Nombre}]],
+                                            start: [[${evt.Fecha}]],
+                                            end: [[${evt.Fecha}]],
+                                            url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
+                                            className: 'success'
+                                    }, 
+                                    /*[/]*/
                                     {
                                             title: 'All Day Event',
                                             start: new Date(y, m, 1)
                                     },
-                                    
-                                    <th:block th:each="evt:${eventos}">
                                     {
-                                            id: <th:block th:text="${evt.IdR}"/>, 
-                                           title: <th:block th:text="${evt.Instalacion}">,
-                                           start: <th:block th:text="${evt.Fecha}">,
-                                           hora: <th:block th:text="${evt.Hora}">,
-                                           usuario: <th:block th:text="${evt.IdUsuario}"/>,
-                                           allDay: false,
-                                           className: 'info',
-                                           <a th:href="@{/reservas/editarReserva(IdR=${evt.IdR})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>, 
-                                           <a th:href="@{/reservas/borrarReserva(IdR=${evt.IdR})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>, 
-                                           <th:block th:if="${campo=='1'}">className: 'info',</th:block>,
-                                           <th:block th:if="${campo=='2'}">className: 'important',</th:block>
+                                            id: 999,
+                                            title: 'Repeating Event',
+                                            start: new Date(y, m, d-3, 16, 0),
+                                            allDay: false,
+                                            className: 'info'
                                     },
-                                    </th:block>
                                     {
                                             id: 999,
                                             title: 'Repeating Event',
@@ -184,66 +186,66 @@
 
             body {
                 margin-bottom: 40px;
-                    margin-top: 40px;
-                    text-align: center;
-                    font-size: 14px;
-                    font-family: 'Roboto', sans-serif;
-                    }
+                margin-top: 40px;
+                text-align: center;
+                font-size: 14px;
+                font-family: 'Roboto', sans-serif;
+            }
 
             .calendar-wrapper {
                 display: flex;
                 align-items: center;
                 margin-top: 100px;
             }
-                    
+
             #wrap {
-                    margin: 0 auto;
-                    }
+                margin: 0 auto;
+            }
 
             #external-events {
-                    float: left;
-                    width: 150px;
-                    padding: 0 10px;
-                    text-align: left;
-                    }
+                float: left;
+                width: 150px;
+                padding: 0 10px;
+                text-align: left;
+            }
 
             #external-events h4 {
-                    font-size: 16px;
-                    margin-top: 0;
-                    padding-top: 1em;
-                    }
+                font-size: 16px;
+                margin-top: 0;
+                padding-top: 1em;
+            }
 
             .external-event { /* try to mimick the look of a real event */
-                    margin: 10px 0;
-                    padding: 2px 4px;
-                    background: #3366CC;
-                    color: #fff;
-                    font-size: .85em;
-                    cursor: pointer;
-                    }
+                margin: 10px 0;
+                padding: 2px 4px;
+                background: #3366CC;
+                color: #fff;
+                font-size: .85em;
+                cursor: pointer;
+            }
 
             #external-events p {
-                    margin: 1.5em 0;
-                    font-size: 11px;
-                    color: #666;
-                    }
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
 
             #external-events p input {
-                    margin: 0;
-                    vertical-align: middle;
-                    }
+                margin: 0;
+                vertical-align: middle;
+            }
 
             #calendar {
-    /* 		float: right; */
-            margin: 0 auto;
-                    width: 900px;
-                    background-color: #FFFFFF;
-                      border-radius: 6px;
-            box-shadow: 0 1px 2px #C3C3C3;
-                    -webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-                    -moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-            box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-                    }
+                /* 		float: right; */
+                margin: 0 auto;
+                width: 900px;
+                background-color: #FFFFFF;
+                border-radius: 6px;
+                box-shadow: 0 1px 2px #C3C3C3;
+                -webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+                -moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+                box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+            }
 
         </style>
     </head>
@@ -271,9 +273,9 @@
                         <div class="drop-holder visible-sm visible-xs">
                             <span>Síguenos</span>
                             <ul class="social-networks">
-                                    <li><a class="fa fa-github" href="#"></a></li>
-                                    <li><a class="fa fa-twitter" href="#"></a></li>
-                                    <li><a class="fa fa-facebook" href="#"></a></li>
+                                <li><a class="fa fa-github" href="#"></a></li>
+                                <li><a class="fa fa-twitter" href="#"></a></li>
+                                <li><a class="fa fa-facebook" href="#"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -288,60 +290,60 @@
             </div>
 
             <div class="col-xs-6">
-                    <div id="advanced-search-form">
-                        <h2>Nueva reserva</h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="Nombre">Nombre</label>
-                                <input type="text" class="form-control" id="first-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="Fecha">Fecha</label>
-                                <input type="text" class="form-control" id="last-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="Hora">Hora</label>
-                                <input type="text" class="form-control" id="country">
-                            </div>
-                            <div class="form-group">
-                                <label for="Instalación">Instalación</label>
-                                <input type="text" class="form-control" id="number">
-                            </div>
-                            <div class="clearfix"></div>
-                            <a href="nuevaReserva" class="btn btn-primary p-5 mt-2"><i class="far fa-calendar-plus">Guardar</i></a>	
-                            <!--<button type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search"></span> Search</button>-->
-                        </form>
-                    </div>
+                <div id="advanced-search-form">
+                    <h2>Nueva reserva</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Fecha">Fecha</label>
+                            <input type="text" class="form-control" id="last-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Hora">Hora</label>
+                            <input type="text" class="form-control" id="country">
+                        </div>
+                        <div class="form-group">
+                            <label for="Instalación">Instalación</label>
+                            <input type="text" class="form-control" id="number">
+                        </div>
+                        <div class="clearfix"></div>
+                        <a href="nuevaReserva" class="btn btn-primary p-5 mt-2"><i class="far fa-calendar-plus">Guardar</i></a>	
+                        <!--<button type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search"></span> Search</button>-->
+                    </form>
+                </div>
             </div>
         </div>
         <footer id="footer">
-		<div class="container">
-		
-			<div class="footer-holder">
-				
-                
-                <div class="row">
-                	<div class="col-md-6">
-                    	<h3>Localización</h3>
-                        <p>
-                            P.º Isabel la Católica, 6, 50009 Zaragoza
-                        </p>
-                        <p>
-                            Teléfono: 976 10 66 20
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-6 text-right">
-                    	<ul class="social">
-                            <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
-                        </ul>
+            <div class="container">
+
+                <div class="footer-holder">
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Localización</h3>
+                            <p>
+                                P.º Isabel la Católica, 6, 50009 Zaragoza
+                            </p>
+                            <p>
+                                Teléfono: 976 10 66 20
+                            </p>
+                        </div>
+
+                        <div class="col-md-6 text-right">
+                            <ul class="social">
+                                <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-			</div>
-		</div>
-	</footer>
+            </div>
+        </footer>
     </body>
 </html>

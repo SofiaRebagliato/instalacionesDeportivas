@@ -26,11 +26,8 @@ public class reservas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdR;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date Fecha;
-    
-    @DateTimeFormat(pattern = "HH:mm")
-    private Date Hora;
     
     private Float Precio;
     
