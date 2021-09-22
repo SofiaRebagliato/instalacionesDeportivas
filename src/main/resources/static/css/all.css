@@ -10,7 +10,6 @@ body {
   margin: 0;
   height: 100%;
   font: 1.3rem/1.61538 "Montserrat", sans-serif; 
-  overflow-x: hidden;
 }
 
 p {
@@ -67,9 +66,7 @@ p {
 
 .logo {
   float: left;
-  margin-left:-200px;
-  width: 151px;
-  height: 41px; }
+ }
 
 .social-placeholder {
   padding: 9px 0 0;
@@ -82,8 +79,9 @@ p {
 #header {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 99;
   padding: 31px 0 32px;
   background: transparent;
@@ -100,6 +98,13 @@ p {
     font-size: 1.6rem;
     line-height: 22px;
     letter-spacing: 0; }
+  
+  .header-container {
+      padding: 0 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
 
 #nav {
   overflow: hidden;
@@ -1080,7 +1085,12 @@ a {
     min-width: 0; }
   #header .logo {
     margin: 4px 0 10px 10px;
-    width: 130px; }
+   }
+  
+  #header .logo img {
+    max-width: 200px;
+    height: 100%;
+  }
 
   .opener-holder {
     margin: 4px 10px;

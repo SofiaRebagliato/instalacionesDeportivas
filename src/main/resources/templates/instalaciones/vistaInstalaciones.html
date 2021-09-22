@@ -213,9 +213,8 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div class="fondo">
-    </div>
-        <i class=" icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;"></i>
+<div class="fondo"></div>
+    <i class=" icono fas fa-chevron-circle-left" onclick="history.back()" style="font-size:70px;color:white; margin-left:20px;margin-top:20px;"></i>
 <div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -224,7 +223,7 @@ $(document).ready(function(){
                     <div class="col-xs-5">
                     <div class="logo"><a href="/index"><img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt="fuente-de-los-vengadores" border="0"></a></div>
                         </br>
-                         </br>
+                        </br>
                         <h2> <b>Administración de Instalaciones</b></h2>
                     </div>
                     <div class="col-xs-7">
@@ -244,28 +243,20 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
-				<tr th:each="insta:${Instalaciones}">
+                    <tr th:each="insta:${Instalaciones}">
+                            <td th:text="${insta.Nombre}"></td>
+                            <td th:text="${insta.Descripcion}"></td>
+                            <td><img th:src="${insta.Imagen}"width="100px"/></td>
+                            <td th:text="${insta.Precio}"></td>
+                            <td> <!-- Editar falta el script -->
+                                    <a th:href="@{/instalaciones/editarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                                    <a th:href="@{/instalaciones/borrarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 
-					
-					<td th:text="${insta.Nombre}"></td>
-					<td th:text="${insta.Descripcion}"></td>
-					<td><img th:src="${insta.Imagen}"width="100px"/></td>
-					<td th:text="${insta.Precio}"></td>
-					<td> 
-						<a th:href="@{/instalaciones/editarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-						<a th:href="@{/instalaciones/borrarInstalacion(IdInstalaciones=${insta.IdInstalaciones})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-					
-					</td>
-
-				</tr>
-
-			</tbody>
-               
+                            </td>
+                    </tr>
+                </tbody>
             </table>
-          
-            
         </div>
-        
     </div>        
 </div> 
     
