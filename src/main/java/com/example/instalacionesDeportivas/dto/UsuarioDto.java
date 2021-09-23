@@ -18,6 +18,7 @@ public class UsuarioDto implements UserDetails {
 	 private String nombre;
 	 private String pass;
 	 private String tipo;
+	 private String Imagen;
 	 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

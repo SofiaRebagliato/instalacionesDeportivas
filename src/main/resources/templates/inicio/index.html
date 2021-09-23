@@ -11,11 +11,24 @@
 	<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/all.css">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<style>
+	.indicador{
+	z-index: 2;
+	color:#FFCE1B;
+	font-size: 20px;
+	text-shadow: 2px 2px 2px black;
+	font-weight: 600;
+	}
+	.imgIndi{
+	width:100px!important;}
+	 
+	</style>
 </head>
 <body>
 <div id="wrapper">
         <header id="header">
             <div class="header-container">
+            
                 <div class="logo">
                     <a href="#">
                         <img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt="fuente-de-los-vengadores" border="0">
@@ -27,6 +40,7 @@
                     </div>
 
                     <div class="nav-drop">
+                    
                    				 
                         <ul>
                         	
@@ -37,6 +51,7 @@
                             <li><a href="/login" class="btn btn-primary rounded">Iniciar Sesión</a></li>
                             
                         </ul>
+                        
                         <div class="drop-holder visible-sm visible-xs">
                             <span>Síguenos</span>
                             <ul class="social-networks">
@@ -47,7 +62,9 @@
                         </div>
                     </div>
                 </nav>
+                
             </div>
+            <div class="indicador" sec:authorize="isAuthenticated()">&nbsp;&nbsp;&nbsp;Bienvenido <span sec:authentication="name"></span><br>&nbsp;&nbsp;&nbsp;<img class="imgIndi"th:src="${#authentication.getPrincipal().getImagen()}"></img></div>
         </header>
 	<section class="visual">
 		<div class="container">
@@ -68,6 +85,7 @@
 		<div class="container">
 			<div id="cta">
 				<a href="/reservas" class="btn btn-primary rounded">Comenzar entrenamiento</a>
+				
 				<p>Todos los dias son un reto, cambia tu vida ahora.</p>
 				
 			</div>
@@ -268,7 +286,7 @@
                 <div class="row">
                 	<div class="col-md-6">
                     	<h3>Localización</h3>
-                    	<div sec:authorize="isAuthenticated()">Bienvenido<span sec:authentication="name"></span></div>
+                    	
                         <p>
                             P.º Isabel la Católica, 6, 50009 Zaragoza
                         </p>
