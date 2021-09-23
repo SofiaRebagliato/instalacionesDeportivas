@@ -16,21 +16,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	
-	/*@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-		auth.inMemoryAuthentication()
-		.withUser("manu").password("{noop}1111").roles("Usuario")
-		.and()
-		.withUser("sofia").password("{noop}1111").roles("Administrador");
-		
-	}*/
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests().anyRequest().permitAll();
-//			.antMatchers("/usuarios/**").permitAll()
-//					.antMatchers("/usuarios/guardarUsuarios").permitAll();
 		
 	}
 

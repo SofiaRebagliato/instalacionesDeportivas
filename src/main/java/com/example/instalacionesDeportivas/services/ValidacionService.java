@@ -25,7 +25,9 @@ public class ValidacionService implements UserDetailsService{
 			UsuarioDto user = new UsuarioDto(
 						usuarios.get().getId_usuario(),
 						usuarios.get().getNombre(),
-						usuarios.get().getPass(),usuarios.get().getTipo());
+						usuarios.get().getPass(),
+						usuarios.get().getTipo(),
+						usuarios.get().getImagen());
 			return user;	
 		}throw new UsernameNotFoundException("Usuario o contraseña incorrecto");
 		
