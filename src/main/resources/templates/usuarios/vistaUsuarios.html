@@ -262,7 +262,7 @@ $(document).ready(function(){
 			<td th:text="${usu.tipo}"></td>
 			<td th:text="${usu.estado}"></td>
 			<td> 
-      					 <a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a th:href="@{/usuarios/editarUsuarios(id_usuario=${usu.id_usuario})}" style="cursor:pointer" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                             <a th:href="@{/usuarios/borrarUsuarios(id_usuario=${usu.id_usuario})}"class="delete"data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 			</td>
                     </tr>
