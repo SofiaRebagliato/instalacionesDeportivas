@@ -33,6 +33,10 @@ public class ReservasController {
     @Autowired
     private ReservasService ReservasService;
     
+    @GetMapping("/construccion")
+    public String login() {
+        return "Construc/ComingSoon.html";
+    }
     @GetMapping("/verReservas")
     public String verReservas(Model m) {
         m.addAttribute("Reservas", repoReservas.findAll());
