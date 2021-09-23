@@ -55,7 +55,8 @@ p {
   width: 100%;
   overflow: hidden;
   display: table-footer-group;
-  height: 1%; }
+  height: 1%;
+  background:  }
 
 .btn-blue {
   background: #3b5998;
