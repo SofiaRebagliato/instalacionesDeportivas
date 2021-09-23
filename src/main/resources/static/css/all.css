@@ -66,6 +66,7 @@ p {
 
 .logo {
   float: left;
+  
  }
 
 .social-placeholder {
@@ -814,10 +815,10 @@ a {
     font-weight: normal;
      }
     #nav .nav-drop {
-      display: block;
+      display: inline-block;
       clear: both;
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
       position: absolute;
       right: 0;
       top: 100%;

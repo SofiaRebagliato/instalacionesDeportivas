@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org "xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,12 +27,15 @@
                     </div>
 
                     <div class="nav-drop">
+                   				 
                         <ul>
+                        	
                             <li class="active visible-sm visible-xs"><a href="index">Inicio</a></li>
                             <li><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
                             <li><a href="instalaciones/vistaInstalacion" class="btn btn-primary rounded">Instalaciones</a></li>
                             <li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
                             <li><a href="/login" class="btn btn-primary rounded">Iniciar Sesión</a></li>
+                            
                         </ul>
                         <div class="drop-holder visible-sm visible-xs">
                             <span>Síguenos</span>
@@ -264,6 +268,7 @@
                 <div class="row">
                 	<div class="col-md-6">
                     	<h3>Localización</h3>
+                    	<div sec:authorize="isAuthenticated()">Bienvenido<span sec:authentication="name"></span></div>
                         <p>
                             P.º Isabel la Católica, 6, 50009 Zaragoza
                         </p>
