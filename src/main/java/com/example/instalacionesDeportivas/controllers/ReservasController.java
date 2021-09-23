@@ -1,8 +1,11 @@
 package com.example.instalacionesDeportivas.controllers;
 
 import com.example.instalacionesDeportivas.entities.reservas;
+import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
+import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
 import com.example.instalacionesDeportivas.services.ReservasService;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.annotation.security.RolesAllowed;
@@ -20,6 +23,12 @@ public class ReservasController {
     
     @Autowired
     private ReservasRepository repoReservas;
+    
+    @Autowired
+    private InstalacionesRepository repoInstalaciones;
+    
+    @Autowired
+    private UsuariosRepository repoUsuarios;
     
     @Autowired
     private ReservasService ReservasService;
@@ -49,9 +58,11 @@ public class ReservasController {
     }
     
     @PostMapping("/guardarReserva")
-    public String guardarReserva(Model m, reservas reservas) {
+    public String guardarReserva(Model m, reservas reservas, Integer idInstalacion, Integer idUsuario) {
+        reservas.setInstalaciones(repoInstalaciones.findById(idInstalacion).get());
+        reservas.setUsuarios(repoUsuarios.findById(idUsuario).get());
         repoReservas.save(reservas);
-        return "redirect:verReservas";
+        return "redirect:/reservas";
     }
     
     @GetMapping("/borrarReserva")

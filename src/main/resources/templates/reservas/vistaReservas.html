@@ -13,6 +13,23 @@
         <link rel="stylesheet" href="/css/all.css">
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        <style>
+            #footer{
+                border-top: 1px solid #D3D3D3;
+                width:100vw;
+                display:block;
+                height:auto;
+                background-color: #f4f4f4;
+                overflow:hidden;
+                margin-top: 10px;
+                }
+            footer 
+                .container{
+                    position:relative;
+                    margin-top:-50px;
+                }
+
+        </style>
         <script src="/js/calendarioReservas.js"></script>
         <script th:inline="javascript">
 
@@ -112,7 +129,7 @@
                     events: [
                             /*[# th:each="evt:${eventos}" ]*/
                             {
-                                title: [[${evt.instalaciones.Nombre}]],
+                                title: [[${evt?.instalaciones?.Nombre}]],
                                 start: [[${evt.Fecha}]],
                                 end: [[${evt.Fecha}]],
                                 url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
@@ -235,21 +252,39 @@
                 <div id="advanced-search-form">
                     <h2>Nueva reserva</h2>
                     <form action="/reservas/guardarReserva" th:object="${Reservas}" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="Fecha">Fecha</label>
-                            <input type="text" th:field="*{Fecha}" class="form-control" id="fecha" placeholder="2021-09-22 10:00">
-                        </div>
-                        <div class="form-group">
-                            <label for="Precio">Precio</label>
-                            <input type="text" disabled="true" value="10" class="form-control" id="precio">
-                        </div>
-                        <div class="form-group">
-                            <label for="Instalación">Nombre instalación</label>
-                            <input type="text" th:field="*{instalaciones.Nombre}" class="form-control" id="instalacion" placeholder="Pista de tenis">
-                        </div>
-                        <div class="form-group">
-                            <label for="Usuario">Nombre usuario</label>
-                            <input type="text" th:field="*{usuarios.nombre}" class="form-control" id="usuario" placeholder="Marta">
+                        <div class="reservas-wrapper">
+                            <div class="form-group">
+                                <label for="Fecha">Fecha</label>
+                                <input type="text" th:field="*{Fecha}"  class="form-control" id="fecha" placeholder="2021-09-22 10:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="Precio">Precio</label>
+                                <input type="text" disabled="true" th:value="${10}" class="form-control" id="precio">
+                            </div>
+                            <div class="form-group">
+                                <label for="Instalación">Nombre instalación</label>
+                                <select name="idInstalacion">
+                                    <option th:each="insta:${Instalaciones}" th:text="${insta.Nombre}" th:value="${insta.IdInstalaciones}"></option> 
+                                </select>
+                                <!--<select name="select">
+                                    <option value="pista de tenis">Pista de tenis</option>
+                                    <option value="pista de padel" selected>Pista de padel</option>
+                                    <option value="pista de baloncesto">Pista de baloncesto</option>
+                                </select>-->
+                                <!--<input type="text" class="form-control" id="instalacion" placeholder="Pista de tenis">-->
+                            </div>
+                            <div class="form-group">
+                                <label for="Usuario">Nombre usuario</label>
+                                <select name="idUsuario">
+                                    <option th:each="usu:${Usuarios}" th:text="${usu.nombre}" th:value="${usu.id_usuario}"></option> 
+                                </select>
+                                <!--<select name="select">
+                                    <option value="Sofia">Sofia</option>
+                                    <option value="Marta" selected>Marta</option>
+                                    <option value="Manuel">Manuel</option>
+                                </select>-->
+                                <!--<input type="text"  class="form-control" id="usuario" placeholder="Marta">-->
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                         <button type="submit" class="btn btn-primary p-5 mt-2"><i class="far fa-calendar-plus">Guardar</i></button>	

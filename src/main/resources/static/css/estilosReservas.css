@@ -764,14 +764,6 @@ body{
 
 }
 
-#advanced-search-form .form-group{
-	margin-bottom: 20px;
-    margin-left:20px;
-	width: 30%;
-    float:left;
-    text-align: left;
-}
-
 #advanced-search-form .form-control{
     padding: 12px 20px;
     height: auto;
@@ -796,6 +788,25 @@ body{
     margin: 20px auto 0;
     display: block;
     outline: none;
+}
+
+.reservas-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+}
+
+.reservas-wrapper .form-group {
+    width: 50%;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.reservas-wrapper .form-group label {
+    margin-right: 10px
 }
 
 @media screen and (max-width: 800px){

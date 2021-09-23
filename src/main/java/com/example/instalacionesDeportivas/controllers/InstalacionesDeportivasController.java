@@ -1,7 +1,11 @@
 package com.example.instalacionesDeportivas.controllers;
 
+import com.example.instalacionesDeportivas.entities.instalaciones;
+import com.example.instalacionesDeportivas.entities.reservas;
+import com.example.instalacionesDeportivas.entities.usuarios;
+import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
-import java.util.List;
+import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +16,12 @@ public class InstalacionesDeportivasController {
 
     @Autowired
     private ReservasRepository repoReservas;
+    
+    @Autowired
+    private InstalacionesRepository repoInstalaciones;
+    
+    @Autowired
+    private UsuariosRepository repoUsuarios;
 
     @GetMapping("/index")
     public String getIndex() {
@@ -30,7 +40,10 @@ public class InstalacionesDeportivasController {
 
     @GetMapping("/reservas") 
     public String reservas(Model m) {
+        m.addAttribute("Reservas", new reservas()); 
         m.addAttribute("eventos", repoReservas.findAll());
+        m.addAttribute("Instalaciones", repoInstalaciones.findAll());
+        m.addAttribute("Usuarios", repoUsuarios.findAll());
         return "reservas/vistaReservas.html";
     }
 
