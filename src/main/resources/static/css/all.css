@@ -16,8 +16,8 @@ p {
   font-family: "Source Sans Pro", sans-serif; }
   .fondo{
   background-image: url("/images/gym.jpeg");
-	background-size: 120vw 130vh;
-	width: 120vw;
+	background-size: 120vw 120vh;
+	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	top: 0;
@@ -55,7 +55,8 @@ p {
   width: 100%;
   overflow: hidden;
   display: table-footer-group;
-  height: 1%; }
+  height: 1%;
+  background:  }
 
 .btn-blue {
   background: #3b5998;
@@ -363,7 +364,7 @@ p {
 
 .area {
   padding: 77px 0 47px;
-  background: #f4f4f4;    border-bottom: 10px solid #8080c0;}
+  background-color: #f4f4f4;    border-bottom: 1px solid #D3D3D3;}
   .area h2 {
     margin: 0 0 28px;
     font-size: 4rem;

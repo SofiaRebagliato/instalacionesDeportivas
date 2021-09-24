@@ -61,7 +61,7 @@ public class UsuariosController {
     public String guardarUsuarios(Model m, usuarios usuario) {
     	usuario.setPass(PassEncod.encode(usuario.getPass()));
         repoUsuarios.save(usuario);
-        return "redirect:verUsuarios";
+        return "/inicio/index";
     }
     
     @GetMapping("/borrarUsuarios")
