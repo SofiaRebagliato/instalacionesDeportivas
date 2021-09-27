@@ -6,6 +6,9 @@ import com.example.instalacionesDeportivas.entities.usuarios;
 import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
 import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +48,17 @@ public class InstalacionesDeportivasController {
         m.addAttribute("Instalaciones", repoInstalaciones.findAll());
         m.addAttribute("Usuarios", repoUsuarios.findAll());
         return "reservas/vistaReservas.html";
+    }
+    @GetMapping("/editarReserva")
+    public String editarReserva(Model m, int IdR) {
+
+        Optional<reservas> Reservas = repoReservas.findById(IdR);
+        if (Reservas.isPresent()) {
+            m.addAttribute("Reservas", Reservas.get());
+        } else {
+            return "redirect:verReservas";
+        }
+        return "/reservas/formularioReservas";
     }
 
     @GetMapping("/compra")
