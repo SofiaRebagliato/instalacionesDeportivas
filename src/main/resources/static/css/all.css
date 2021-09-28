@@ -102,10 +102,11 @@ p {
     letter-spacing: 0; }
   
   .header-container {
-      padding: 0 50px;
-      display: flex;
+      padding-right: 50px;
+      display: contents;
       align-items: center;
       justify-content: space-between;
+      margin-right:100px;
   }
 
 #nav {
@@ -132,7 +133,7 @@ p {
     font-weight: bold;
     letter-spacing: 0;
     white-space: normal;
-    margin-left:-30px;
+   
     }
     #nav li a {
       display: block;
