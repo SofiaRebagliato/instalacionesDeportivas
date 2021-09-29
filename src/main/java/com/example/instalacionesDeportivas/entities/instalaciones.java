@@ -26,7 +26,7 @@ public class instalaciones {
     public String Nombre;
     private String Descripcion;
     private String Imagen;
-    private Float Precio;
+    private double Precio;
     
     @OneToMany(mappedBy = "instalaciones") 
     private List<reservas> reservas;

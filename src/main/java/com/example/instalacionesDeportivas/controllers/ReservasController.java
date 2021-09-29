@@ -65,6 +65,7 @@ public class ReservasController {
     public String guardarReserva(Model m, reservas reservas, Integer idInstalacion, Integer idUsuario) {
         reservas.setInstalaciones(repoInstalaciones.findById(idInstalacion).get());
         reservas.setUsuarios(repoUsuarios.findById(idUsuario).get());
+        reservas.setPrecio(reservas.getInstalaciones().getPrecio());
         repoReservas.save(reservas);
         return "redirect:/reservas";
     }

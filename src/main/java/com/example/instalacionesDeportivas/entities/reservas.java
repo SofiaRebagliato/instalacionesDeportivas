@@ -1,5 +1,7 @@
 package com.example.instalacionesDeportivas.entities;
 
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -26,10 +28,13 @@ public class reservas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdR;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Date Fecha;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate Fecha;
     
-    private Float Precio;
+    @DateTimeFormat(pattern = "HH-mm")
+    private String Hora;
+    
+    private double Precio;
     
     @ManyToOne
     @JoinColumn(name = "IdUsuario")
