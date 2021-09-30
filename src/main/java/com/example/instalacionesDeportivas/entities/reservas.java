@@ -26,7 +26,7 @@ public class reservas {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdR;
+    private Integer IdR;
     
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate Fecha;
