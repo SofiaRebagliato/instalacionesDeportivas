@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org "
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	  th:replace="Layouts/Layout::layout( htmlcuerpo=~{::body}, htmlHead=~{::head})">
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hiberus Sports</title>
-<meta name="author"
-	content="Manuel López López,Sofia Rebagliato Torregrosa">
-<link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg"
-	sizes="16x16">
-<link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet"
-	href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/all.css">
-<link
-	href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic'
-	rel='stylesheet' type='text/css'>
 <style>
 .indicador {
 	z-index: 2;
@@ -26,7 +16,7 @@
 	font-weight: 600;
 	overflow: visible !important;
 	padding-right: 20px;
-	margin-top:-10px;
+	margin-top:-10px!important;
 }
 
 
@@ -41,62 +31,7 @@
 </style>
 </head>
 <body>
-	<div id="wrapper">
-		<header id="header">
-			<div class="header-container">
-
-				<div class="logo">
-					<a href="/index"> <img
-						src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png"
-						alt="fuente-de-los-vengadores" border="0">
-					</a>
-				</div>
-				<nav id="nav">
-					<div class="opener-holder">
-						<a href="#" class="nav-opener"><span></span></a>
-					</div>
-
-					<div class="nav-drop">
-
-
-						<ul>
-
-							<li class="active visible-sm visible-xs"><a href="index">Inicio</a></li>
-							<li><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
-							<li><a href="instalaciones/vistaInstalacion"
-								class="btn btn-primary rounded">Instalaciones</a></li>
-							<li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
-							<li><a href="/login" class="btn btn-primary rounded">Iniciar
-									Sesión</a></li>
-							<li><div class="indicador" sec:authorize="isAuthenticated()">
-									<form th:action="@{/logout}" method="post">
-										<button class="btn btn-primary" type="submit"
-											style="margin-top: 10px;">Cerrar Sesión</button>
-									</form>
-									Bienvenido <br><span sec:authentication="name"></span>
-									<br><img
-										class="imgIndi"
-										th:src="${#authentication.getPrincipal().getImagen()}"></img>
-								</div>
-							</li>
-
-						</ul>
-
-						<div class="drop-holder visible-sm visible-xs">
-							<span>Síguenos</span>
-							<ul class="social-networks">
-								<li><a class="fa fa-github" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-facebook" href="#"></a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-
-			</div>
-
-
-		</header>
+	
 		<section class="visual">
 			<div class="container">
 				<div class="text-block">
@@ -364,44 +299,8 @@
 
 		</section>
 
-		<footer id="footer">
-			<div class="container">
+		
 
-				<div class="footer-holder">
-
-
-					<div class="row">
-						<div class="col-md-6">
-							<h3>Localización</h3>
-
-							<p>P.º Isabel la Católica, 6, 50009 Zaragoza</p>
-							<p>Teléfono: 976 10 66 20</p>
-						</div>
-
-						<div class="col-md-6 text-right">
-							<ul class="social">
-								<li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-github"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</footer>
-
-	</div>
-
-	<script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/jquery.main.js"></script>
-	<!-- <script>
-      $('.min').click(function() {
-        var imagen = $(this).attr("src");
-        $('#up').attr("src", imagen);
-      });
-    </script> -->
+	
 </body>
 </html>

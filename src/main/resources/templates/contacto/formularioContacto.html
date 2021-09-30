@@ -1,24 +1,14 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:replace="Layouts/Layout::layout( htmlcuerpo=~{::body}, htmlHead=~{::head})">
     <head>
         <title>Contáctanos</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="/css/bootstrap.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
 		<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/css/all.css">
-		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
         <style>
-        html{
-        overflow-y:hidden;
-        }
-            body {
-                color: #606468;
-                font: 87.5%/1.5em 'Open Sans', sans-serif;
-                margin: 0;
-            }
-            
             .container{
                
                 width: 1000px;
@@ -34,67 +24,47 @@
                 font-size: 35px;
                 color: #36A0FF;
             }
-      .fondo{
-             
-	background-image: url("/images/gym.jpeg");
-	background-size: 100vw 100vh;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	z-index: -1;
-	filter: blur(3px);
+     
+
+	#footer{
+		border-top: 1px solid #D3D3D3;
+		width:100vw;
+		display:block;
+		height:auto;
+		background-color: #f4f4f4;
+		overflow:hidden;
+		text-align: left;
+		}
+		footer .container{
+			position:relative;
+			margin-top:-50px;
+		}
+	.indicador {
+	z-index: 2;
+	color: #FFCE1B;
+	font-size: 20px;
+	text-shadow: 2px 2px 2px black;
+	font-weight: 600;
+	overflow: visible !important;
+	padding-right: 20px;
+	margin-top:-30px!important;
+}
+
+
+
+.imgIndi {
+	width: 100px !important;
+	border-radius: 150px;
+	border:1px solid #888;
 	
-}
-#footer{
- border-top: 1px solid #D3D3D3;
-width:100vw;
-display:block;
-height:auto;
-background-color: #f4f4f4;
-overflow:hidden;
-}
-footer .container{
-position:relative;
-margin-top:-50px;
+	
 }
         </style>
     </head>
     <body>
-   <div id="wraper">
-    <div class="fondo"></div>
-        <header id="header">
-            <div class="header-container">
-                <div class="logo">
-                    <a href="/index">
-                        <img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt="fuente-de-los-vengadores" border="0">
-                    </a>
-                </div>
-                <nav id="nav">
-                    <div class="opener-holder">
-                        <a href="#" class="nav-opener"><span></span></a>
-                    </div>
 
-                    <div class="nav-drop">
-                        <ul>
-                            <li class="active visible-sm visible-xs"><a href="/index">Inicio</a></li>
-                            <li><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
-                            <li><a href="instalaciones/vistaInstalacion" class="btn btn-primary rounded">Instalaciones</a></li>
-                            <li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
-                            <li><a href="/login" class="btn btn-primary rounded">Iniciar Sesión</a></li>
-                        </ul>
-                        <div class="drop-holder visible-sm visible-xs">
-                            <span>Síguenos</span>
-                            <ul class="social-networks">
-                                    <li><a class="fa fa-github" href="#"></a></li>
-                                    <li><a class="fa fa-twitter" href="#"></a></li>
-                                    <li><a class="fa fa-facebook" href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
+    <div class="fondo"></div>
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -146,35 +116,6 @@ margin-top:-50px;
             </div>
         </div>
       
-         <footer id="footer">
-		<div class="container">
-
-			<div class="footer-holder">
-
-
-                <div class="row">
-                	<div class="col-md-6">
-                    	<h3>Localización</h3>
-                        <p>
-                            P.º Isabel la Católica, 6, 50009 Zaragoza
-                        </p>
-                        <p>
-                            Teléfono: 976 10 66 20
-                        </p>
-                    </div>
-
-                    <div class="col-md-6 text-right">
-                    	<ul class="social">
-                            <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
-                            <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-			</div>
-		</div>
-	</footer>
-</div>
+        
     </body>
 </html>
