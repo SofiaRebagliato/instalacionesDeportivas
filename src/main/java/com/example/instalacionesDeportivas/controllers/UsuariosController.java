@@ -9,14 +9,14 @@ import javax.annotation.security.RolesAllowed;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-//import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-//@RolesAllowed({"ROLE_USER","ROLE_ADMIN"})
+@RolesAllowed({"ROLE_USER","ROLE_ADMIN"})
 @Controller
 @RequestMapping("/usuarios")
 public class UsuariosController {
@@ -30,21 +30,21 @@ public class UsuariosController {
     private PasswordEncoder PassEncod;
     
     @GetMapping("/verUsuarios")
-//    @Secured({"ROLE_ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     public String verUsuarios(Model m) {
         m.addAttribute("Usuarios", repoUsuarios.findAll());
         return "/usuarios/vistaUsuarios";
     }
     
     @GetMapping("/altaUsuarios")
-//    @Secured({"ROLE_ADMIN","ROLE_USER"})
+   @Secured({"ROLE_ADMIN"})
     public String altaUsuarios(Model m) {
         m.addAttribute("Usuarios", new usuarios());
         return "/usuarios/formularioUsuarios";
     }
     
     @GetMapping("/editarUsuarios")
-//    @Secured({"ROLE_ADMIN","ROLE_USER"})
+    @Secured({"ROLE_ADMIN","ROLE_USER"})
     public String editarUsuarios(Model m, int id_usuario) {
 
         Optional<usuarios> Usuarios = repoUsuarios.findById(id_usuario);
@@ -57,7 +57,7 @@ public class UsuariosController {
     }
     
     @PostMapping("/guardarUsuarios")
-//    @Secured({"ROLE_ADMIN","ROLE_USER"})
+    @Secured({"ROLE_ADMIN","ROLE_USER"})
     public String guardarUsuarios(Model m, usuarios usuario) {
     	usuario.setPass(PassEncod.encode(usuario.getPass()));
         repoUsuarios.save(usuario);
@@ -65,7 +65,7 @@ public class UsuariosController {
     }
     
     @GetMapping("/borrarUsuarios")
-//    @Secured({"ROLE_ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     public String borrarUsuarios(Model m, int id_usuario) {
         repoUsuarios.deleteById(id_usuario);
         return "redirect:verUsuarios";

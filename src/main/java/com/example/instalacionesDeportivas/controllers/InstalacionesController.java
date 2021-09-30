@@ -48,7 +48,7 @@ public class InstalacionesController {
 //    @Secured({"ROLE_ADMIN"})
     public String altaInstalacion(Model m) {
         m.addAttribute("Instalaciones", new instalaciones());
-        return "instalaciones/formularioInstalaciones";
+        return "instalaciones/formularioInstalaciones2";
     }
     
     @GetMapping("/editarInstalacion")//actualizar
@@ -61,7 +61,7 @@ public class InstalacionesController {
         } else {
             return "redirect:verInstalacion";
         }
-        return "/instalaciones/formularioInstalaciones";
+        return "/instalaciones/formularioInstalaciones2";
     }
     
     @PostMapping("/guardarInstalacion")//guardar

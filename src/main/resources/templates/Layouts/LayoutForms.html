@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org "
-	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" 
-      th:fragment="layout(htmlcuerpo)">
-
-
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="author"
-	content="Manuel López López,Sofia Rebagliato Torregrosa">
-<link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg"
-	sizes="16x16">
-<link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/all.css">
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic'
+<html xmlns:th="https://www.thymeleaf.org"
+		th:fragment="layout(htmlcuerpo)">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario Instalaciones</title>
+        <meta name="author" content="Manuel López López,Sofia Rebagliato Torregrosa">
+        <link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic'
 	rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-<th:block th:if="${htmlHead!=null}" >
+	
+        <link rel="stylesheet" href="/css/estilosInstalacion.css">
+        <link rel="stylesheet" href="/css/all.css">
+        <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        <th:block th:if="${htmlHead!=null}" >
 	<th:block th:include="${htmlHead}"/>
+	
 </th:block>
-	
+        
 <style>
-
-
-	
-.indicador {
+	.indicador {
 	z-index: 2;
 	color: #FFCE1B;
 	font-size: 20px;
@@ -37,9 +29,22 @@
 	font-weight: 600;
 	overflow: visible !important;
 	padding-right: 20px;
-	margin-top:-10px;
+	margin-top:-28px;
 }
+.visual2{
+	min-height: 600px!important;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 125px 0 0;
 
+}
+ body {
+        color: #566787;
+		background: #f5f5f5;
+		font-size: 13px;
+		height:100%;
+	}
 
 
 .imgIndi {
@@ -50,10 +55,10 @@
 	
 }
 </style>
-</head>
-<body>
-	<div id="wrapper">
-		<header id="header">
+    </head>
+    <body>
+    <div id="wrapper">
+    <header id="header">
 			<div class="header-container">
 
 				<div class="logo">
@@ -108,9 +113,8 @@
 
 
 		</header>
-		
-		<th:block th:include="${htmlcuerpo}"/>
-		<footer id="footer">
+       <th:block th:include="${htmlcuerpo}"/>
+       <footer id="footer">
 			<div class="container">
 
 				<div class="footer-holder">
@@ -138,9 +142,8 @@
 
 		</footer>
 		</div>
-		<script>
-	
-		</script>
-	
-</body>
+
+        
+
+    </body>
 </html>
