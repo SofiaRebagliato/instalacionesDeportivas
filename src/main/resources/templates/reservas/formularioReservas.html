@@ -18,39 +18,29 @@
         color:white;}
         label{
         color:white;}
-        .btnCrear{
+        .btn{
     		float:right;
     		border: none;
     		border-radius: 1.5rem;
     		padding:10px;
     		background: white;
-    		color: #0062cc;
+                color:#0062cc;
     		font-weight: 600;
     		width: 10%;
     		cursor: pointer;
 }
-.fondo{
-	background-image: url("../../static/images/gym.jpeg");
-	background-size: 120vw 120vh;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	z-index: -1;
-	filter: blur(3px);
-	
-}
+
 
         </style>
     </head>
     <body>
         <div class="fondo">
     </div>
-    <i class="icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;" ></i>
-        <div class="container register">
+    
+        <div class="container register rounded">
         <div class="row"></div>
         
-            <h2>Creación de Reservas</h2>
+            <h2>Reserva</h2>
             <form action="/reservas/guardarReservas"th:object="${Reservas}" method="post"  enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-2">
@@ -70,62 +60,49 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-
-                           <i class="far fa-2x fa-user"style="color:white;">&nbsp;</i> <input type="text"th:field="*{Fecha}" required class="form-control"  />
+                           <input type="date"th:field="*{Fecha}" required class="form-control"  />
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-2">
-                        <label for="Precio">Precio</label>
+                        <label for="Hora">Hora</label>
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-
-                           <i class="fas fa-2x fa-euro-sign"style="color:white;margin-right:17px;"></i> <input type="number" readonly="readonly"  th:field="*{Precio}" required class="form-control" name="Precio" />
+                           <input type="time" th:field="*{Hora}" required class="form-control" name="Hora" />
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-2">
-                        <label for="Instalacion">Nombre de Instalacion</label>
+                        <label for="Instalación">Instalación</label>
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-
-                           <i class="far fa-2x fa-edit"style="color:white;"></i>
-                           <select name="idInstalacion">
-                                    <option th:each="insta:${Instalaciones}" th:text="${insta.Nombre}" th:value="${insta.IdInstalaciones}"></option> 
-                           </select>
+                            <select name="idInstalacion">
+                                <option th:each="insta:${Instalaciones}" th:text="${insta.Nombre + ' - ' + #numbers.formatDecimal(insta.Precio,0,2) + '€'}" th:value="${insta.IdInstalaciones}"></option>
+                            </select>
                         </div>
                     </div>
                 </div>
                  <div class="row">
                     <div class="col-2">
-                        <label for="Usuario">Nombre de Usuario</label>
+                        <label for="Usuario">Usuario</label>
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-
-                           <i class="far fa-2x fa-edit"style="color:white;"></i>
-                           <select name="idUsuario">
-                                    <option th:each="usu:${Usuarios}" th:text="${usu.nombre}" th:value="${usu.id_usuario}"></option> 
-                           </select>
+                            <select name="idUsuario">
+                                <option th:each="usu:${Usuarios}" th:text="${usu.nombre}" th:value="${usu.id_usuario}"></option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                
-
-                
-                <input type="submit" class="btnCrear" value="Crear" >
-
-
+                <input type="submit" class="btn" value="Cancelar">
+                <input type="submit" class="btn mr-2" value="Borrar" >
+                <input type="submit" class="btn mr-2" value="Guardar">
             </form>
-
-</div>
-
-        
-
+        </div>
     </body>
 </html>
