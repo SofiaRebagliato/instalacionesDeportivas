@@ -1,18 +1,18 @@
-<html xmlns:th="https://www.thymeleaf.org" ng-app="starter">
+<html xmlns:th="https://www.thymeleaf.org" ng-app="starter"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:replace="Layouts/Layout::layout( htmlcuerpo=~{::body}, htmlHead=~{::head})">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+       
         <title>Reservas</title>
-        <link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
-        <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+       
+       
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
         <link rel="stylesheet" href="/css/estilosReservas.css">
-        <link rel="stylesheet" href="/css/all.css">
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        
+
+        
         <style>
 
             #footer{
@@ -23,6 +23,7 @@
                 background-color: #f4f4f4;
                 overflow:hidden;
                 margin-top: 10px;
+                text-align: left;
                 }
             footer
                 .container{
@@ -30,6 +31,69 @@
                     margin-top:-50px;
                 }
 
+            body {
+                margin-bottom: 40px;
+                margin-top: 40px;
+                text-align: center;
+                font-size: 14px;
+                
+
+            }
+
+            .calendar-wrapper {
+                display: flex;
+                align-items: center;
+                margin-top: 100px;
+            }
+
+            #wrap {
+                margin: 0 auto;
+            }
+
+            #external-events {
+                float: left;
+                width: 150px;
+                padding: 0 10px;
+                text-align: left;
+            }
+
+            #external-events h4 {
+                font-size: 16px;
+                margin-top: 0;
+                padding-top: 1em;
+            }
+
+            .external-event { /* try to mimick the look of a real event */
+                margin: 10px 0;
+                padding: 2px 4px;
+                background: #3366CC;
+                color: #fff;
+                font-size: .85em;
+                cursor: pointer;
+            }
+
+            #external-events p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
+
+            #external-events p input {
+                margin: 0;
+                vertical-align: middle;
+            }
+
+            #calendar {
+                /* 		float: right; */
+                margin: 0 auto;
+                width: 900px;
+                background-color: #FFFFFF;
+                border-radius: 6px;
+                box-shadow: 0 1px 2px #C3C3C3;
+                -webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+                -moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+                box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+            }
         </style>
         <script src="/js/calendarioReservas.js"></script>
         <script th:inline="javascript">
@@ -141,108 +205,11 @@
             });
             });
         </script>
-        <style>
-
-            body {
-                margin-bottom: 40px;
-                margin-top: 40px;
-                text-align: center;
-                font-size: 14px;
-                font-family: 'Roboto', sans-serif;
-
-            }
-
-            .calendar-wrapper {
-                display: flex;
-                align-items: center;
-                margin-top: 100px;
-            }
-
-            #wrap {
-                margin: 0 auto;
-            }
-
-            #external-events {
-                float: left;
-                width: 150px;
-                padding: 0 10px;
-                text-align: left;
-            }
-
-            #external-events h4 {
-                font-size: 16px;
-                margin-top: 0;
-                padding-top: 1em;
-            }
-
-            .external-event { /* try to mimick the look of a real event */
-                margin: 10px 0;
-                padding: 2px 4px;
-                background: #3366CC;
-                color: #fff;
-                font-size: .85em;
-                cursor: pointer;
-            }
-
-            #external-events p {
-                margin: 1.5em 0;
-                font-size: 11px;
-                color: #666;
-            }
-
-            #external-events p input {
-                margin: 0;
-                vertical-align: middle;
-            }
-
-            #calendar {
-                /* 		float: right; */
-                margin: 0 auto;
-                width: 900px;
-                background-color: #FFFFFF;
-                border-radius: 6px;
-                box-shadow: 0 1px 2px #C3C3C3;
-                -webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-                -moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-                box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-            }
-
-        </style>
+       
     </head>
     <body>
     <div class="fondo"></div>
-        <header id="header">
-            <div class="header-container">
-                <div class="logo">
-                    <a href="/index">
-                        <img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt="fuente-de-los-vengadores" border="0">
-                    </a>
-                </div>
-                <nav id="nav">
-                    <div class="opener-holder">
-                        <a href="#" class="nav-opener"><span></span></a>
-                    </div>
-
-                    <div class="nav-drop">
-                        <ul>
-                            <li class="active visible-sm visible-xs"><a href="/index">Inicio</a></li>
-                            <li><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
-                            <li><a href="instalaciones/vistaInstalacion" class="btn btn-primary rounded">Instalaciones</a></li>
-                            <li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
-                            <li><a href="/login" class="btn btn-primary rounded">Iniciar Sesión</a></li>
-                        </ul>
-                        <div class="drop-holder visible-sm visible-xs">
-                            <span>Síguenos</span>
-                            <ul class="social-networks">
-                                <li><a class="fa fa-github" href="#"></a></li>
-                                <li><a class="fa fa-twitter" href="#"></a></li>
-                                <li><a class="fa fa-facebook" href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        
         <div class="calendar-wrapper">
             <div id='wrap' class="col-xs-6">
 
@@ -297,34 +264,6 @@
             </div>
         </div>
 
-        <footer id="footer">
-            <div class="container">
-
-                <div class="footer-holder">
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Localización</h3>
-                            <p>
-                                P.º Isabel la Católica, 6, 50009 Zaragoza
-                            </p>
-                            <p>
-                                Teléfono: 976 10 66 20
-                            </p>
-                        </div>
-
-                        <div class="col-md-6 text-right">
-                            <ul class="social">
-                                <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
-                                <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        
     </body>
 </html>
