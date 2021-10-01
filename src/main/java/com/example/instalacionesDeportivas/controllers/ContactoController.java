@@ -48,4 +48,12 @@ public class ContactoController {
         }
         return "contacto/formularioContacto";
     }     
+    
+//    @GetMapping("/verifica")
+//    public String verificarCorreo(String email){
+//       //String access_key
+//       //String email
+         //ValidacionEmailDto ved = servicioValidarExterno.checkearEmail("");
+        
+//    }
 }

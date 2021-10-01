@@ -83,6 +83,7 @@
                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-envelope bigicon"></i></span>
                                     <div class="col-md-8">
                                         <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -100,7 +101,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                        <button th:onclick="|validarEmail(${email})|" type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -115,7 +116,14 @@
                 </div>
             </div>
         </div>
-      
-        
+        <script>
+            function validarEmail(email) {
+                if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+               alert("La dirección de email " + email + " es correcta!.");
+              } else {
+               alert("La dirección de email es incorrecta!.");
+              }
+            }
+        </script>
     </body>
 </html>

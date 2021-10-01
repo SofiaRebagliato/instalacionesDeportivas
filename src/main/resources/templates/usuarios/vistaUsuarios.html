@@ -258,6 +258,14 @@ width:1580px!important;}
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 });
+
+ function validarEmail(email) {
+                if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+              } else {
+               alert("La dirección de email es incorrecta!.");
+              }
+    }
+    
 </script>
  
 </body>
