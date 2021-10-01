@@ -1,4 +1,5 @@
 <html xmlns:th="https://www.thymeleaf.org">
+    <!-- 
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,18 +33,14 @@
 
 
         </style>
-    </head>
+    </head> -->
+        
     <body>
-        <div class="fondo">
-    </div>
-    
-        <div class="container register rounded">
-        <div class="row"></div>
         
             <h2>Reserva</h2>
             <form action="/reservas/guardarReservas"th:object="${Reservas}" method="post"  enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-1">
                         <label for="IdReservas"></label>
                     </div>
                     <div class="col-10">
@@ -55,7 +52,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-1">
                         <label for="Fecha">Fecha</label>
                     </div>
                     <div class="col-10">
@@ -103,6 +100,5 @@
                 <input type="submit" class="btn mr-2" value="Borrar" >
                 <input type="submit" class="btn mr-2" value="Guardar">
             </form>
-        </div>
     </body>
 </html>

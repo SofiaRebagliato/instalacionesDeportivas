@@ -6,13 +6,15 @@
        
         <title>Reservas</title>
        
-       
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js" ></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
         
         <link rel="stylesheet" href="/css/estilosReservas.css">
         
 
-        
         <style>
         .indicador {
 	z-index: 2;
@@ -202,8 +204,7 @@
                         }
                     },
                     eventClick:function(obj) {
-                        alert(obj.IdR); 
-                        //<a th:onclick="|editar(${obj.IdR})|"></a>
+                        editar(obj.IdR);
                         
                     },                  
                     events: [ 
@@ -267,17 +268,20 @@
                 </div>
             </div>
         </div>
+
     <script>
         function editar(IdR) {
                 $.ajax({
-                    url: "/reservas/formularioReservas", //<--Ejecutamos del controlador esta url
+                    url: "/reservas/editarReserva", //<--Ejecutamos del controlador esta url
                     data: {//<- Parametros ?id=4
                         //id: pId,
-                        IdR: aIdR,
+                        IdR: IdR,
                     },
                     success: function (html) {    //<- Nos devuelven la respuesta. 
+                        //bootbox.alert("holla");
                         bootbox.dialog({
                             message: html
+                            //message: '<h1>Hola</h1>',
                         })
                     },
                     error: function (err) {
@@ -286,5 +290,6 @@
                 });
             }
     </script>
+    
     </body>
 </html>
