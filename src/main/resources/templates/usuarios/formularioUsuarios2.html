@@ -86,8 +86,12 @@
 		                                    </div>
                                 
                                 			<div class="input-group3">
-                                        		<input type="text"  th:field="*{estado}"class="form-control" placeholder="Activo o Baja *" />
+                                        		 <select name="estado">
+                               					 	<option  th:text="Activo" th:value="Activo"></option>
+                               					 	<option  th:text="Baja" th:value="Baja"></option>
+                            				</select>
                                			    </div>
+                               			   
                                 		</div>
                                 		
                                 	</div>

@@ -53,7 +53,7 @@ public class UsuariosController {
         } else {
             return "redirect:verUsuarios";
         }
-        return "/usuarios/formularioUsuarios2";
+        return "/usuarios/formularioUsuarios";
     }
     
     @PostMapping("/guardarUsuarios")
