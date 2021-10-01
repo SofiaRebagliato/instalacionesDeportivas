@@ -1,13 +1,11 @@
-	*{
-	    font-family: "Montserrat", sans-serif!important;
-	}
+	
     .container-form{
-	    width:1300px;
+	    width:1000px;
 	    margin-top:160px;
 	    background:white;
 	    border:5px groove white;
 	    margin-bottom:100px;
-	    margin-left:350px;
+	    margin-left:500px;
 	    padding:-20px;
 	    box-shadow: 20px 15px 15px black;
     }
@@ -17,7 +15,7 @@
     }
     .input-group{
     
-	    width:100%;
+	    width:78%;
 	    margin-bottom:5px;
 	     margin-top:-5px;
 	    display:inline-grid!important;}
@@ -42,14 +40,18 @@
     }
     .title{
         padding-left:10px;
-        width:1285px;
+        width:985px;
         height:60px;
 		background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 		padding-right:20px;
 		margin-top:-22;
-		margin-left:-74px;
+		margin-left:-14px;
     }
     h2{
-    text-align:center;
+    text-align:left;
+    font-size: 24px!important;
+    padding-top: 22px;
+   
     
     }
+   
