@@ -16,25 +16,19 @@
     </div>
      
         <div class="container register">
+        <i class=" icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;"></i>
             <div class="row">
                 <div class="col-md-3 register-left">
-                    <a href="/index"><img src="https://fontmeme.com/permalink/210914/1918944ede0bcc7058a0694909fe8184.png" alt=""/></a>
+                    <a href="/index"><img src="https://fontmeme.com/permalink/210917/bf88151cdb70c84acb0c47f31863a391.png" alt=""/></a>
                     <h3>Bienvenido a HiberusSports</h3>
                     <p> Todo logro empieza con la decisión de intentarlo </p>
                     
                 </div>
                 <div class="col-md-9 register-right">
-                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" title="Admin"><i class="fas fa-users-cog"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" title="Nuevo usuario"><i class="fas fa-user"></i></a>
-                        </li>
-                    </ul>
+                    
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Nuevo Administrador</h3>
+                            <h3 class="register-heading">Nuevo Usuario</h3>
                             <form action="/usuarios/guardarUsuarios" th:object="${Usuarios}" method="post">
                             <div class="row register-form">
                                 <div class="col-md-6"id="primero">
@@ -76,49 +70,7 @@
                             </div>
                             </form>
                         </div>
-                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <h3  class="register-heading">Nuevo Usuario</h3>
-                            <form action="/usuarios/guardarUsuarios"th:object="${Usuarios}" method="post">
-                            <div class="row register-form">
-                                 <div class="col-md-6"id="primero">
-                                      <div class="form-group">
-                                        <input type="hidden" th:field="*{id_usuario}"required class="form-control" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  th:field="*{nombre}"class="form-control" placeholder="Nombre *" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  th:field="*{apellido1}"class="form-control" placeholder="Primer apellido *"  />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  th:field="*{apellido2}" class="form-control" placeholder="Segundo apellido *" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email"  th:field="*{email}"class="form-control"  placeholder="Email *"  />
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" th:field="*{dni}" class="form-control" placeholder="Dni *"  />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password"  th:field="*{pass}"class="form-control" placeholder="Contraseña *" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  th:field="*{imagen}" class="form-control"  placeholder="Url(Imagen)*"  />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  th:field="*{tipo}"class="form-control"  placeholder="Usuario *"/>
-                                    </div>
-                                </div>
-                                <div class="form-group col-12">
-                                    <input type="text"  th:field="*{estado}"class="form-control" placeholder="Activo o Baja *" />
-                                </div>
-                                <input type="submit" class="btnRegister"  value="Registrarse"/>
-                            </div>
-                            </form>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

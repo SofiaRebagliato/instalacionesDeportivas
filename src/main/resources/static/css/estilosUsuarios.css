@@ -1,6 +1,13 @@
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: 3%;
+    background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%);
+	background-size: 120vw 120vh;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+    
+    max-width:6000px!important;
     padding: 3%;
 }
 .register-left{
@@ -22,11 +29,13 @@
     background: #f8f9fa;
     font-weight: bold;
     color: #383d41;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 3%;
     cursor: pointer;
 }
 .register-right{
+	margin-top:-60px;
+	
     background: #f8f9fa;
     border-top-left-radius: 10% 50%;
     border-bottom-left-radius: 10% 50%;
@@ -38,7 +47,13 @@
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }
-
+i:hover{
+	color:yellow !important;
+	
+}
+.volver{
+	font-size: 30px;
+}
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
@@ -56,17 +71,7 @@
     padding: 10%;
     margin-top: 10%;
 }
-.fondo{
-	background-image: url("/images/gym.jpeg");
-	background-size: 120vw 120vh;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	z-index: -1;
-	filter: blur(3px);
-	
-}
+
 .btnRegister{
     float: right;
     margin-top: 2%;
