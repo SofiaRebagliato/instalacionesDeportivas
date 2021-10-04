@@ -75,7 +75,7 @@
 							<li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/instalaciones/verInstalacion" class="btn btn-primary-rounded"style="background-color: #ffce1b; border-color: #ffce1b;">Gestión de Instalaciones</a></li>
 							<li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/usuarios/verUsuarios" class="btn btn-primary-rounded"style="background-color: #ffce1b; border-color: #ffce1b;">Gestión de Usuarios</a></li>
 							<li class="active visible-sm visible-xs"><a href="index">Inicio</a></li>
-							<li><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
+							<li sec:authorize="isAuthenticated()==true"><a href="/reservas" class="btn btn-primary rounded">Reservas</a></li>
 							<li><a href="/instalaciones/vistaInstalacion"
 								class="btn btn-primary rounded">Instalaciones</a></li>
 							<li><a href="/contacto" class="btn btn-primary rounded">Contacto</a></li>
