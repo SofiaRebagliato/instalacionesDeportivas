@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Hiberus Sports</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/jpg" href="/favicons/logoHiberus.jpg" sizes="16x16">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/estilosUsuarios.css">
+    </head>
+    <body>
+    <div class="fondo">
+    </div>
+     
+        <div class="container register">
+        <i class=" icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;"></i>
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <a href="/index"><img src="https://fontmeme.com/permalink/210917/bf88151cdb70c84acb0c47f31863a391.png" alt=""/></a>
+                    <h3>Bienvenido a HiberusSports</h3>
+                    <p> Todo logro empieza con la decisión de intentarlo </p>
+                    
+                </div>
+                <div class="col-md-9 register-right">
+                    
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">EditarUsuario</h3>
+                            <form action="/usuarios/guardarUsuarios" th:object="${Usuarios}" method="post">
+                            <div class="row register-form">
+                                <div class="col-md-6"id="primero">
+                                    <div class="form-group">
+                                        <input type="hidden" th:field="*{id_usuario}"required class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  th:field="*{nombre}"class="form-control" placeholder="Nombre *" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  th:field="*{apellido1}"class="form-control" placeholder="Primer apellido *"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  th:field="*{apellido2}" class="form-control" placeholder="Segundo apellido *" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email"  th:field="*{email}"class="form-control"  placeholder="Email *"  />
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" th:field="*{dni}" class="form-control" placeholder="Dni *"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password"  th:field="*{pass}"class="form-control" placeholder="Contraseña *" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  th:field="*{imagen}" class="form-control"  placeholder="Url(Imagen)*"  />
+                                    </div>
+                                    <div class="form-group">
+                                    <select th:field="*{tipo}"class="form-control">
+                                        <option value="Usuario">Usuario</option>
+                                        <option sec:authorize="hasRole('ROLE_ADMIN')"value="Administrador">Administrador</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                <select th:field="*{estado}" class="form-control">
+                                        <option value="Activo">Activo</option>
+                                        <option sec:authorize="hasRole('ROLE_ADMIN')"value="Baja">Baja</option>
+                                </select>
+                                </div>
+                                <input type="submit" class="btnRegister center-block"  value="Registrarse"/>
+                            </div>
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </body>
+</html>

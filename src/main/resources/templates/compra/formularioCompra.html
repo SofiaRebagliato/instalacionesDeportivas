@@ -1,19 +1,27 @@
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-	th:replace="Layouts/Layout::layout( ~{::body})">
+	th:replace="Layouts/Layout::layout( htmlcuerpo=~{::body}, htmlHead=~{::head})">
     <head>
         <title>Pasarela de pago</title>
         <meta charset="UTF-8">
         
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+        
+         <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css"> 
         
 	
-	
+	<style>
+	.indicador {
+	z-index: 2;
+	color: #FFCE1B;
+	font-size: 20px;
+	text-shadow: 2px 2px 2px black;
+	font-weight: 600;
+	overflow: visible !important;
+	padding-right: 20px;
+	margin-top:-30px!important;
+}
+	</style>
         
     </head>
     <body>
@@ -70,34 +78,8 @@
                 </div>
             </div>
         </form>
-       <footer id="footer">
-			<div class="container">
-
-				<div class="footer-holder">
-
-
-					<div class="row">
-						<div class="col-md-6">
-							<h3>Localización</h3>
-
-							<p>P.º Isabel la Católica, 6, 50009 Zaragoza</p>
-							<p>Teléfono: 976 10 66 20</p>
-						</div>
-
-						<div class="col-md-6 text-right">
-							<ul class="social">
-								<li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-paper-plane"></i></a></li>
-								<li><a href="javascript:"><i class="fa fa-github"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</footer>
-		</div>
+      
+		
         
         <div id="smart-button-container">
       <div style="text-align: center;">

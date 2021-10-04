@@ -3,19 +3,19 @@
 	  th:replace="Layouts/LayoutForms::layout( htmlcuerpo=~{::body}, htmlHead=~{::head})">
     <head>
     <meta charset="utf-8">
-    
+    <link rel="stylesheet" href="/css/estilosInstalacion.css">
     </head>
     <body>
     
-        <div class="fondo">
-    </div>
-    <i class="icono fas fa-chevron-circle-left"onclick="history.back()"style="font-size:70px;color:white; margin-left:20px;margin-top:20px;" ></i>
-        <div class="container register">
-        <div class="row"></div>
+        <div class="fondo"></div>
+    <div class="container-form">
+        <div class="container">
         
-            <h2>Creación de Instalaciones</h2>
+        	<div class="title">
+            	<h2><b>Creación / Edición de Instalaciones</b></h2>
+            </div>
             <form action="/instalaciones/guardarInstalacion"th:object="${Instalaciones}" method="post"  enctype="multipart/form-data">
-                <div class="row">
+                
                     <div class="col-2">
                         <label for="IdInstalaciones"></label>
                     </div>
@@ -25,7 +25,7 @@
                             <input th:field="*{IdInstalaciones}" type="hidden"required class="form-control" />
                         </div>
                     </div>
-                </div>
+                
 
                 <div class="row">
                     <div class="col-2">
@@ -34,7 +34,7 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                           <i class="far fa-2x fa-user"style="color:white;">&nbsp;</i> <input type="text"th:field="*{Nombre}" required class="form-control"  />
+                            &nbsp; <input type="text"th:field="*{Nombre}" required class="form-control"  />
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                           <i class="far fa-2x fa-edit"style="color:white;"></i> <input type="text"th:field="*{Descripcion}" required class="form-control"name="Descripcion" />
+                            &nbsp;<input type="text"th:field="*{Descripcion}" required class="form-control"name="Descripcion" />
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-                           <i class="far fa-2x fa-file-image"style="color:white;margin-right:5px;">&nbsp;</i> <input type="text"th:field="*{Imagen}" name="Imagen" class="form-control" >
+                           &nbsp; <input type="text"th:field="*{Imagen}" name="Imagen" class="form-control" >
                             
                         </div>
                     </div>
@@ -69,15 +69,16 @@
                     <div class="col-10">
                         <div class="input-group mb-2">
 
-                           <i class="fas fa-2x fa-euro-sign"style="color:white;margin-right:17px;"></i> <input type="number"th:field="*{Precio}" required class="form-control" name="Precio" />
+                            &nbsp; <input type="number"th:field="*{Precio}" required class="form-control" name="Precio" />
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="btnCrear" value="Crear" >
+                <input type="submit" class="btn btn-primary" value="Crear" >
 
 
             </form>
 
+	</div>
 </div>
 
         
