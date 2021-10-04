@@ -3,6 +3,7 @@ package com.example.instalacionesDeportivas.controllers;
 import com.example.instalacionesDeportivas.entities.instalaciones;
 import com.example.instalacionesDeportivas.entities.reservas;
 import com.example.instalacionesDeportivas.entities.usuarios;
+
 import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
 import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
@@ -28,6 +29,7 @@ public class InstalacionesDeportivasController {
 
     @GetMapping("/index")
     public String getIndex() {
+    	
         return "inicio/index.html";
     }
 
