@@ -59,7 +59,12 @@ public class UsuariosController {
     @PostMapping("/guardarUsuarios")
     @Secured({"ROLE_ADMIN","ROLE_USER"})
     public String guardarUsuarios(Model m, usuarios usuario) {
-    	usuario.setPass(PassEncod.encode(usuario.getPass()));
+    	if (usuario.getPass().length()>0) {
+    		usuario.setPass(PassEncod.encode(usuario.getPass()));	
+    	}else {
+    		usuario.setPass(repoUsuarios.findById(usuario.getId_usuario()).get().getPass());
+    	}
+    	
         repoUsuarios.save(usuario);
         return "inicio/index";
     }
