@@ -3,6 +3,7 @@ package com.example.instalacionesDeportivas.entities;
 import com.sun.istack.NotNull;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public class usuarios {
     private String estado;
    
     
-    @OneToMany(mappedBy = "usuarios") 
+    @OneToMany(mappedBy = "usuarios", fetch = FetchType.EAGER) 
     private List<reservas> reservas;
     
     

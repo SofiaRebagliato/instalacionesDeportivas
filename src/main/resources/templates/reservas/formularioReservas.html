@@ -34,10 +34,16 @@
 
         </style>
     </head> -->
-        
+    <head>
+        <style>
+            .btn{
+                background-color: #ffce1b;
+            }
+        </style>
+    </head>
     <body>
         
-            <h2>Reserva</h2>
+            <h4>Reserva</h4>
             <form class="form-horizontal" style="margin:0 auto" action="/reservas/guardarReservas"th:object="${Reservas}" method="post"  enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-1">
@@ -45,7 +51,6 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group mb-2">
-
                             <input th:field="*{IdR}" type="hidden"required class="form-control" />
                         </div>
                     </div>
@@ -57,44 +62,33 @@
                         <input type="date" th:field="*{Fecha}" required class="form-control"  />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label class="col-lg-4 control-label" for="Hora">Hora</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="Hora">Hora</label>
+                    <div class="col-lg-4">
                            <input type="time" th:field="*{Hora}" required class="form-control" name="Hora" />
-                        </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-2">
-                        <label for="Instalación">Instalación</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-                            <select name="idInstalacion">
-                                <option th:each="insta:${Instalaciones}" th:text="${insta.Nombre + ' - ' + #numbers.formatDecimal(insta.Precio,0,2) + '€'}" th:value="${insta.IdInstalaciones}"></option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                 <div class="row">
-                    <div class="col-2">
-                        <label for="Usuario">Usuario</label>
-                    </div>
-                    <div class="col-10">
-                        <div class="input-group mb-2">
-                            <select name="idUsuario">
-                                <option th:each="usu:${Usuarios}" th:text="${usu.nombre}" th:value="${usu.id_usuario}"></option>
-                            </select>
-                        </div>
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="Instalación">Instalación</label>
+                    <div class="col-lg-4 control-label">
+                        <select id="selectInstalacion" name="idInstalacion" th:valor="${Reservas.instalaciones.IdInstalaciones}">
+                            <option th:each="insta:${Instalaciones}" th:text="${insta.Nombre + ' - ' + #numbers.formatDecimal(insta.Precio,0,2) + '€'}" th:value="${insta.IdInstalaciones}"></option>
+                        </select>
+                        <script>
+                            $('#selectInstalacion').val($('#selectInstalacion').attr('valor'));
+                        </script>
                     </div>
                 </div>
-                <input type="submit" class="btn mr-2" value="Guardar">
-                <input type="submit" class="btn mr-2" value="Borrar" >
-                <input type="submit" class="btn" value="Cancelar">
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="Usuario">Usuario</label>
+                    <div class="col-lg-1 control-label">
+                        <span th:text="${Reservas.usuarios.nombre}"/>
+                    </div>
+                </div>
+                <button type="submit" class="btn p-5 mt-2">Guardar</button>
+                <a th:href="@{/reservas/borrarReserva(IdR=${Reservas.IdR})}" class="btn p-5 mt-2" data-toggle="tooltip">Borrar</a>
+                
             </form>
     </body>
 </html>

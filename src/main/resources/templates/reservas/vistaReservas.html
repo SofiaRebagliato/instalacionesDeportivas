@@ -57,7 +57,7 @@
             .calendar-wrapper {
                 display: flex;
                 align-items: center;
-                margin-top: 100px;
+                margin-top: 200px;
             }
 
             #wrap {
@@ -258,10 +258,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="Usuario">Nombre usuario</label>
-                                <select name="idUsuario">
-                                    <option th:each="usu:${Usuarios}" th:text="${usu.nombre}" th:value="${usu.id_usuario}"></option>
-                                </select>
+                                <label for="Usuario">Usuario</label>
+                                <div class="col-lg-1 control-label">
+                                    <span th:text="${UserSession?.nombre}"/>
+                                </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
