@@ -50,7 +50,7 @@ public class ReservasController {
         } else {
             m.addAttribute("Reservas", repoUsuarios.findById(usuarioDto().getId_usuario()).get().getReservas());
         }
-        return "/reservas/vistaReservas";
+        return "reservas/vistaReservas";
     }
     
     @GetMapping("/nuevaReserva")
@@ -68,7 +68,7 @@ public class ReservasController {
         } else {
             return "redirect:verReservas";
         }
-        return "/reservas/formularioReservas";
+        return "reservas/formularioReservas";
     }
     
     @ModelAttribute("UserSession")

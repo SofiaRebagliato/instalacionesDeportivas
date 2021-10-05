@@ -36,12 +36,12 @@ public class InstalacionesController {
 //    @Secured({"ROLE_ADMIN"})
     public String verInstalacion(Model m) {
         m.addAttribute("Instalaciones", repoInstalaciones.findAll());
-        return "/instalaciones/vistaInstalaciones";
+        return "instalaciones/vistaInstalaciones";
     }
     @GetMapping("/vistaInstalacion")
 //  @Secured({"ROLE_ADMIN"})
   public String vistaInstalacion(Model m) {
-      return "/instalaciones/instalaciones";
+      return "instalaciones/instalaciones";
   }
     
     @GetMapping("/altaInstalacion")//crear
@@ -61,7 +61,7 @@ public class InstalacionesController {
         } else {
             return "redirect:verInstalacion";
         }
-        return "/instalaciones/formularioInstalaciones";
+        return "instalaciones/formularioInstalaciones";
     }
     
     @PostMapping("/guardarInstalacion")//guardar

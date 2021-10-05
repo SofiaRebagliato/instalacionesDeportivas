@@ -44,7 +44,8 @@ public class InstalacionesDeportivasController {
     
     @ModelAttribute("UserSession")
     public UsuarioDto usuarioDto(){
-        return (UsuarioDto)(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        return dameUsuario();
+        //return (UsuarioDto)(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
     }    
 
     @GetMapping("/contacto")
@@ -84,7 +85,7 @@ public class InstalacionesDeportivasController {
         } else {
             return "redirect:verReservas";
         }
-        return "/reservas/formularioReservas";
+        return "reservas/formularioReservas";
     }
 
     @GetMapping("/compra")

@@ -33,14 +33,14 @@ public class UsuariosController {
     @Secured({"ROLE_ADMIN"})
     public String verUsuarios(Model m) {
         m.addAttribute("Usuarios", repoUsuarios.findAll());
-        return "/usuarios/vistaUsuarios";
+        return "usuarios/vistaUsuarios";
     }
     
     @GetMapping("/altaUsuarios")
    @Secured({"ROLE_ADMIN"})
     public String altaUsuarios(Model m) {
         m.addAttribute("Usuarios", new usuarios());
-        return "/usuarios/formularioUsuarios";
+        return "usuarios/formularioUsuarios";
     }
     
     @GetMapping("/editarUsuarios")
@@ -53,7 +53,7 @@ public class UsuariosController {
         } else {
             return "redirect:verUsuarios";
         }
-        return "/usuarios/formularioEditarUsuario";
+        return "usuarios/formularioEditarUsuario";
     }
     
     @PostMapping("/guardarUsuarios")
@@ -61,7 +61,7 @@ public class UsuariosController {
     public String guardarUsuarios(Model m, usuarios usuario) {
     	usuario.setPass(PassEncod.encode(usuario.getPass()));
         repoUsuarios.save(usuario);
-        return "/inicio/index";
+        return "inicio/index";
     }
     
     @GetMapping("/borrarUsuarios")
