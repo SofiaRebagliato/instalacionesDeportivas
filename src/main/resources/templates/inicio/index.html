@@ -24,14 +24,20 @@
                 <img src="/images/gym.jpeg" alt="" class="bg-stretch">
         </section>
         <section class="main">
-                <div class="container">
-                        <div id="cta">
-                                <a href="/reservas" class="btn btn-primary rounded">Comenzar
-                                        entrenamiento</a>
+			<div class="container">
+				<div id="cta"sec:authorize="isAuthenticated()==false">
+					<a href="/login" class="btn btn-primary rounded">Comenzar
+						entrenamiento</a>
+						</div>
+						<div id="cta"sec:authorize="isAuthenticated()">
+							<a href="/reservas" class="btn btn-primary rounded">Comenzar
+						entrenamiento</a>
+						
 
-                                <p>Todos los dias son un reto, cambia tu vida ahora.</p>
+					<p>Todos los dias son un reto, cambia tu vida ahora.</p>
 
-                        </div>
+				</div>
+
                         <div class="row">
                                 <div class="text-box col-md-offset-1 col-md-10">
                                         <h2>Sobre Nosotros</h2>
@@ -74,7 +80,6 @@
                                                                         partido. En HiberusSports podrás disfrutar de tu deporte
                                                                         preferido con los mejores entrenadores.</p>
 
-<<<<<<< HEAD
                                                         </div>
                                                 </li>
                                                 <li>
@@ -93,32 +98,6 @@
                                                                         altamente cualificados para conseguir el máximo rendimiento.</p>
                                                         </div>
                                                 </li>
-=======
-		<section class="visual">
-			<div class="container">
-				<div class="text-block">
-					<div class="heading-holder">
-						<h1>
-							Entrena<br>Compite<br>Repite
-						</h1>
-					</div>
-					<p class="tagline">La vida comienza al final de tu zona de
-						confort</p>
-				</div>
-			</div>
-			<img src="/images/gym.jpeg" alt="" class="bg-stretch">
-		</section>
-		<section class="main">
-			<div class="container">
-				<div id="cta"sec:authorize="isAuthenticated()==false">
-					<a href="/login" class="btn btn-primary rounded">Comenzar
-						entrenamiento</a>
-						</div>
-						<div id="cta"sec:authorize="isAuthenticated()">
-							<a href="/reservas" class="btn btn-primary rounded">Comenzar
-						entrenamiento</a>
-						
->>>>>>> origin/master
 
                                                 <li>
                                                         <div class="img-holder">
@@ -311,9 +290,7 @@
                   color: 'blue',
                   layout: 'vertical',
                   label: 'buynow',
-
                 },
-
                 createOrder: function(data, actions) {
                   return actions.order.create({
                     purchase_units: [{"amount":{"currency_code":"EUR","value":1}}]
