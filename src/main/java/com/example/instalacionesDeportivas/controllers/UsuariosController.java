@@ -40,7 +40,7 @@ public class UsuariosController {
    @Secured({"ROLE_ADMIN"})
     public String altaUsuarios(Model m) {
         m.addAttribute("Usuarios", new usuarios());
-        return "/usuarios/formularioUsuarios2";
+        return "/usuarios/formularioUsuarios";
     }
     
     @GetMapping("/editarUsuarios")
@@ -53,7 +53,7 @@ public class UsuariosController {
         } else {
             return "redirect:verUsuarios";
         }
-        return "/usuarios/formularioUsuarios2";
+        return "/usuarios/formularioEditarUsuario";
     }
     
     @PostMapping("/guardarUsuarios")
