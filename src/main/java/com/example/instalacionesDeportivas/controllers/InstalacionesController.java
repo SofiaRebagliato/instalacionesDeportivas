@@ -32,10 +32,10 @@ public class InstalacionesController {
         return "index.html";
     }
     
-    @GetMapping("/verInstalacion")
+    @GetMapping("/verInstalacion") 
 //    @Secured({"ROLE_ADMIN"})
     public String verInstalacion(Model m) {
-        m.addAttribute("Instalaciones", repoInstalaciones.findAll());
+        m.addAttribute("Instalaciones",repoInstalaciones.findAll());
         return "instalaciones/vistaInstalaciones";
     }
     @GetMapping("/vistaInstalacion")
