@@ -25,13 +25,14 @@ public class usuarios {
     private Integer id_usuario;
     private String nombre;
     private String apellido1;
-    private String apellido2;
+    private String telefono;
     private String email;
     private String dni;
     private String pass;
     private String imagen;
     private String tipo;
     private String estado;
+    
    
     
     @OneToMany(mappedBy = "usuarios", fetch = FetchType.EAGER) 

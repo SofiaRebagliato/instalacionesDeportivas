@@ -224,7 +224,7 @@ width:1580px!important;}
                         
                         <th>Nombre</th>						
                         <th>Apellido1</th>
-                        <th>Apellido2</th>
+                        <th>Telefono</th>
                         <th>Email</th>
                         <th>Dni</th>
                         <th>Imagen</th>
@@ -236,7 +236,7 @@ width:1580px!important;}
                     <tr th:each="usu:${Usuarios}">
 			<td th:text="${usu.nombre}"></td>
 			<td th:text="${usu.apellido1}"></td>
-			<td th:text="${usu.apellido2}"></td>
+			<td th:text="${usu.telefono}"></td>
 			<td th:text="${usu.email}"></td>
 			<td th:text="${usu.dni}"></td>
 			<td><img th:src="${usu.imagen}"width="100px"/></td>

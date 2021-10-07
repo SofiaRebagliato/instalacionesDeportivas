@@ -4,6 +4,7 @@ import com.example.instalacionesDeportivas.dto.UsuarioDto;
 import com.example.instalacionesDeportivas.entities.instalaciones;
 import com.example.instalacionesDeportivas.entities.reservas;
 import com.example.instalacionesDeportivas.entities.usuarios;
+import com.example.instalacionesDeportivas.interfaces.IWhatsapp;
 import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
 import com.example.instalacionesDeportivas.repositories.UsuariosRepository;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 @RolesAllowed({"ROLE_USER","ROLE_ADMIN"})
 @Controller
 @RequestMapping("/reservas")
@@ -38,6 +40,9 @@ public class ReservasController {
     
     @Autowired
     private ReservasService ReservasService;
+    
+    @Autowired
+    private IWhatsapp smsService;
         
     @GetMapping("/construccion")
     public String login() {
@@ -65,15 +70,22 @@ public class ReservasController {
         Optional<reservas> Reservas = repoReservas.findById(IdR);
         if (Reservas.isPresent()) {
             m.addAttribute("Reservas", Reservas.get());
+            
         } else {
             return "redirect:verReservas";
         }
+        
         return "reservas/formularioReservas";
     }
     
     @ModelAttribute("UserSession")
     public UsuarioDto usuarioDto(){
-        return (UsuarioDto)(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        try{
+            return (UsuarioDto)(SecurityContextHolder.getContext().getAuthentication().getPrincipal());    
+        }catch(Exception e){
+            return null;
+        }
+        
     }
     
     @ModelAttribute("Instalaciones")
@@ -92,7 +104,15 @@ public class ReservasController {
         reservas.setInstalaciones(repoInstalaciones.findById(idInstalacion).get());
         reservas.setUsuarios(repoUsuarios.findById(user.getId_usuario()).get());
         reservas.setPrecio(reservas.getInstalaciones().getPrecio());
+        
+        if (reservas.getIdR()!=null){
+           smsService.editarReserva("686136927", reservas); 
+        } else{
+           smsService.enviarReserva("686136927", reservas); 
+        }
+        
         repoReservas.save(reservas);
+        
         return "redirect:/reservas";
     }
     
@@ -101,5 +121,11 @@ public class ReservasController {
         repoReservas.deleteById(IdR);
         return "redirect:/reservas";
     }
-    
+
+    @GetMapping("/testSMS")
+    @ResponseBody
+    public String testSMS(){
+        smsService.enviarMensaje("688966613", "Mensaje enviado con éxito!");
+        return "Enviado";
+    }   
 }

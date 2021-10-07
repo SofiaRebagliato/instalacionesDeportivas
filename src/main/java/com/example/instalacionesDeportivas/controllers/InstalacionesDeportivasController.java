@@ -1,9 +1,8 @@
 package com.example.instalacionesDeportivas.controllers;
 
 import com.example.instalacionesDeportivas.dto.UsuarioDto;
-import com.example.instalacionesDeportivas.entities.instalaciones;
 import com.example.instalacionesDeportivas.entities.reservas;
-import com.example.instalacionesDeportivas.entities.usuarios;
+import com.example.instalacionesDeportivas.interfaces.IWhatsapp;
 
 import com.example.instalacionesDeportivas.repositories.InstalacionesRepository;
 import com.example.instalacionesDeportivas.repositories.ReservasRepository;
@@ -30,6 +29,9 @@ public class InstalacionesDeportivasController {
     
     @Autowired
     private UsuariosRepository repoUsuarios;
+    
+    @Autowired
+    private IWhatsapp smsService;
 
     @GetMapping("/index")
     public String getIndex() {
