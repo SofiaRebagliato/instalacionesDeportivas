@@ -41,6 +41,7 @@ public class InstalacionesDeportivasController {
 
     @GetMapping("/login")
     public String login() {
+    	SecurityContextHolder.getContext().setAuthentication(null);
         return "Login/vistaLogin.html";
     }
     

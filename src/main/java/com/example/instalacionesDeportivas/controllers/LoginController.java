@@ -24,10 +24,14 @@ public class LoginController {
 	
 	@PostMapping("/loginUser")
 	public String loginUser(String nombre, String pass) {
-		UsernamePasswordAuthenticationToken token=new UsernamePasswordAuthenticationToken(nombre, pass);
-		Authentication auth=manager.authenticate(token);
-		SecurityContextHolder.getContext().setAuthentication(auth);
-		return "redirect:/index";
+		try {
+			UsernamePasswordAuthenticationToken token=new UsernamePasswordAuthenticationToken(nombre, pass);
+			Authentication auth=manager.authenticate(token);
+			SecurityContextHolder.getContext().setAuthentication(auth);
+			return "redirect:/index";
+		}catch(Exception e) {
+			return "redirect:/login";
+		}
 	}
 	
 	@GetMapping("/infoUser")
